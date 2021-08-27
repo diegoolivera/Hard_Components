@@ -1,0 +1,26 @@
+body{
+    background-color: #242424;
+}
+
+.contenedorLogo i{
+
+    font-size: 100px;
+    color: aliceblue;
+}
+
+.contenedorLogo{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.contenedorBoton{
+    margin: 140px 470px;
+}
+
+.contenedorBoton a{
+    text-decoration: none;
+    padding: 20px 30px;
+    background-color: brown;
+    color: aliceblue;
+}

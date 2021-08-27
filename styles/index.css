@@ -1,0 +1,115 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color: #222222;
+}
+
+header{
+    background-color: #151515;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: rgb(250, 253, 255);
+    margin-left: 15px;
+    
+}
+
+.buscador input{
+    padding: 5px 5px;
+    margin-right: 0;
+    outline: none;
+    border: none;
+}
+.buscador i{
+    color: aliceblue;
+    display: inline-block;
+    padding: 4px;
+    padding-bottom: 6px;
+    background-color: #078f07;
+    
+}
+
+.navegacion ul{
+    display: flex;
+    list-style: none;
+    margin-right: 20px;
+}
+
+.navegacion ul li {
+    margin-right: 10px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    
+    
+}
+.navegacion ul li a{
+    text-decoration: none;
+    color: rgb(199, 220, 233);
+}
+
+.logoCarrito{
+    width: 30px;
+    display: inline-block;
+    text-decoration: none;
+    
+    
+}
+
+/*main*/
+
+#seccionArticulos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 30px;
+    margin: 100px 60px;
+    
+}
+.card{
+    background-color: #DCDCDC;
+    width: 250px;
+    height: 350px;
+    border-radius: 8px;
+}
+
+.card .imagenCard{
+    width: 200px;
+    margin: 10px 25px;
+    border-radius: 5px;
+    
+}
+
+.card .contenedorDescripcion{
+    margin: 5px 20px;
+}
+
+.botonCard{
+    margin: 20px 10px 10px 60px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    background-color: #078f07;
+    color: #DCDCDC;
+    font-size: 20px;
+    
+}
+
+.linea{
+    border-color: white
+}
+
+
+
