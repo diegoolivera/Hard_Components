@@ -6,7 +6,9 @@
 }
 
 body{
-    background-color: #222222;
+    /*background-color: #222222;*/
+    background-color: #7887a0;
+    
 }
 
 header{
@@ -21,7 +23,7 @@ header{
     width: 20px;
     display: inline-block;
     text-decoration: none;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Gilda Display', serif;
     font-size: 20px;
     color: rgb(250, 253, 255);
     margin-left: 15px;
@@ -66,7 +68,7 @@ header{
 .navegacion ul li {
     margin-right: 10px;
     text-decoration: none;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Gilda Display', serif;
     font-size: 20px;
     
     
