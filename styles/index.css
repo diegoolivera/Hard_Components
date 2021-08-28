@@ -7,7 +7,7 @@
 
 body{
     /*background-color: #222222;*/
-    background-color: #7887a0;
+    background-color: #656566;
     
 }
 
@@ -111,14 +111,57 @@ header{
     color: #DCDCDC;
 }
 
+.listaProductos a:hover{
+    color: #87a4d6;
+}
+
+.botonAbrirMenu{
+    padding: 10px 20px;
+    background-color: #187f99;
+    color: #DCDCDC;
+    border-style: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 15px;
+    display: none;
+    cursor: pointer;
+
+}
+
+.cerrarMenu{
+    display: none;
+}
+
 
 /*main*/
+
+.ordena{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-top: 40px;
+    margin-left: 39px;
+    
+}
+
+
+
+.combo{
+    padding: 10px 20px;
+    background-color: #587ebe;
+    color: aliceblue;
+    font-size: 17px;
+    border-style: none;
+    outline: none;
+}
 
 #seccionArticulos{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     row-gap: 30px;
-    margin: 100px 60px;
+    place-items: center;
+    margin-top: 40px;
     
 }
 .card{
@@ -154,4 +197,136 @@ header{
 }
 
 
+.footer{
+    margin-top: 70px;
+    background-color: #151515;
+    height: 170px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
 
+.pagos img{
+    width: 250px;
+}
+
+.pagos p{
+    color: #DCDCDC;
+    font-size: 20px;
+    margin-left: 35px;
+    margin-bottom: 5px;
+}
+
+
+.redes{
+    list-style: none;
+    margin-left: 20px;
+    display: flex;
+}
+
+.redes li{
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 40px;
+}
+
+.redes li a{
+    color: #DCDCDC;
+}
+
+.redes li a:hover{
+    color: #587ebe;
+}
+
+/*responsive*/
+
+@media only screen and (max-width: 800px) {
+    body {
+      background-color: lightblue;
+    }
+
+    .header{
+        width: 100%;
+    }
+
+    .logo{
+        font-size: 20px;
+    }
+
+
+    .buscador input{
+        display: none;
+    }
+
+    
+    .buscador i{
+    
+        color: rgb(208, 213, 221);
+        background-color: #187f99;
+        position: relative;
+        
+        
+    }
+
+    .navegacion ul li{
+        font-size: 15px;
+    }
+
+    .logoCarrito{
+        width: 20px;
+    }
+
+    .listaProductos {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        background-color: #187f99;
+        font-size: 40px;
+    }
+
+    .botonAbrirMenu{
+        display: block;
+    }
+    .cerrarMenu{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+        color: #DCDCDC;
+        cursor: pointer;
+    }
+
+    #seccionArticulos{
+       
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 30px;
+        
+    }
+
+  }
+
+
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 360px) {
+    .header{
+        width: 100%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

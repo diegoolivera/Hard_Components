@@ -30,7 +30,6 @@
         
         
         <nav class="navegacion">
-            <div class="myDiv"></div>
             <ul class="navegacion__lista">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="/html/contacto.html">Contacto</a></li>
@@ -43,7 +42,11 @@
         
     </header>
     <nav class="barraProductos"> 
-         <ul class="listaProductos">
+        <div class="abrirMenu">
+            <button class="botonAbrirMenu" id="botonAbrirMenu">Categorias</button>
+        </div>
+        
+         <ul class="listaProductos" id="listaProductos">
              <li><a href="#">Todo</a></li>
              <li><a href="#">Netbooks</a></li>
              <li><a href="#">Perifericos</a></li>
@@ -53,10 +56,24 @@
              <li><a href="#">Fuentes</a></li>
              <li><a href="#">Almacenamiento</a></li>
              <li><a href="#">Gabinete</a></li>
+             <div class="cerrarMenu" id="cerrarMenu">
+                <i class="fas fa-times"></i>
+            </div>
          </ul>
     </nav>
 
     <main class="main">
+
+        <div class="ordena">
+
+    
+            <select name="combo" class="combo">
+                <option disabled selected>Ordenar Por:</option>
+                <option value="1">Menor Precio</option>
+                <option value="2">Mayor Precio</option> 
+        
+              </select>
+        </div>
         
         <section id="seccionArticulos">
 
@@ -73,7 +90,17 @@
     </main>
 
 
+    <footer class="footer">
+        <ul class="redes">
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
 
+        <div class="pagos">
+            <p>metodos de pago</p>
+            <img src="/img/logo/logosFooter/logoFooter.png" alt="">
+        </div>
+    </footer>
 
 
 
@@ -82,6 +109,7 @@
 
     <!--JS-->
     <script src="js/main.js"></script>
+    
     <!--sweet alert-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
