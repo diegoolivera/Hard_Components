@@ -30,6 +30,10 @@ header{
     
 }
 
+.contenedorLogoAux{
+    display: none;
+}
+
 .buscador{
     position: relative;
 }
@@ -255,19 +259,7 @@ header{
     }
 
 
-    .buscador input{
-        display: none;
-    }
-
     
-    .buscador i{
-    
-        color: rgb(208, 213, 221);
-        background-color: #187f99;
-        position: relative;
-        
-        
-    }
 
     .navegacion ul li{
         font-size: 15px;
@@ -307,8 +299,11 @@ header{
     #seccionArticulos{
        
         grid-template-columns: repeat(2,1fr);
-        row-gap: 30px;
-        
+    
+    }
+
+    .ordena{
+        align-items: center;
     }
 
   }
@@ -316,14 +311,94 @@ header{
 
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 360px) {
-    .header{
-        width: 100%;
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 675px) {
+    body{
+        background-color: #078f07;
+    }
+
+
+    .buscador{
+        margin-top: 142px;
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 360px) {
+    
+    body{
+        background-color: rgb(32, 73, 59);
+        width: 100%;
+    }
+   
+    
+
+    .header{
+        width: 100%;
+
+    }
+
+    .navegacion ul{
+        margin-right: 120px;
+        
+    }
+
+    .contenedorLogo{
+        display: none;
+    }
+
+    .contenedorLogoAux{
+        display: inline-block;
+    }
+    .contenedorLogoAux h1{
+        font-size: 25px;
+    }
+
+
+    #seccionArticulos{
+       
+        grid-template-columns: 1fr;
+    
+    }
+
+    .buscador input{
+        width: 45px;
+    }
+
+
+    /*POSICIONAR LA BARRA CON POSITION YA QUE CON MARGIN NO
+     ME DEJA MOVER EL NAVEGATION*/
+
+
+
+}
+
+
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}
