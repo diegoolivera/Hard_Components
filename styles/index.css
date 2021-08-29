@@ -309,11 +309,6 @@ header{
   }
 
 
-
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-
-
-/* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 675px) {
     body{
         background-color: #078f07;
@@ -328,28 +323,7 @@ header{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 550px) {
     
     body{
         background-color: rgb(32, 73, 59);
@@ -364,7 +338,7 @@ header{
     }
 
     .navegacion ul{
-        margin-right: 120px;
+        margin-right: 10px;
         
     }
 
@@ -386,13 +360,29 @@ header{
     
     }
 
+    .buscador{
+        margin-top: 0;
+        position: absolute;
+        top: 100px;
+        left: 20px;
+    }
+
+    .buscador i{
+        left: 91%;
+    }
+
     .buscador input{
-        width: 45px;
+        width: 156px;
+    }
+
+    .ordena{
+        margin-left: 0;
+        margin-top: 25px;
+        text-align: center;
     }
 
 
-    /*POSICIONAR LA BARRA CON POSITION YA QUE CON MARGIN NO
-     ME DEJA MOVER EL NAVEGATION*/
+    
 
 
 
@@ -400,8 +390,26 @@ header{
 
 
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (max-width: 580px) {
+
+    body{
+        background-color: coral;
+    }
+
+    .buscador{
+        margin-top: 0;
+        position: absolute;
+        top: 100px;
+        left: 20px;
+    }
+
+    
+
+    .navegacion ul{
+        margin-right: 15px;
+        
+    }
+}
+
+
