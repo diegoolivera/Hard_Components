@@ -7,7 +7,7 @@
 
 body{
     /*background-color: #222222;*/
-    background-color: #656566;
+    background-color: #b6c3dd;
     
 }
 
@@ -246,9 +246,7 @@ header{
 /*responsive*/
 
 @media only screen and (max-width: 800px) {
-    body {
-      background-color: lightblue;
-    }
+   
 
     .header{
         width: 100%;
@@ -309,10 +307,10 @@ header{
   }
 
 
+
+
 @media only screen and (max-width: 675px) {
-    body{
-        background-color: #078f07;
-    }
+   
 
 
     .buscador{
@@ -323,12 +321,9 @@ header{
 
 
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 370px) {
     
-    body{
-        background-color: rgb(32, 73, 59);
-        width: 100%;
-    }
+   
    
     
 
@@ -393,9 +388,6 @@ header{
 
 @media only screen and (max-width: 580px) {
 
-    body{
-        background-color: coral;
-    }
 
     .buscador{
         margin-top: 0;
@@ -410,6 +402,73 @@ header{
         margin-right: 15px;
         
     }
+
+
+    #seccionArticulos{
+       
+        grid-template-columns: 1fr;
+    
+    }
 }
 
 
+@media only screen and (max-width: 580px){
+    
+
+
+    .pagos img{
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    
+   
+
+    .contenedorLogo{
+        display: none;
+    }
+
+    .contenedorLogoAux{
+        display: inline-block; 
+    }
+
+    .logo h1{
+        font-size: 21px;
+    }
+
+
+    .buscador input{
+        width: 170px;
+    }
+
+    .buscador i{
+        left: 90%;
+    }
+
+    .pagos img{
+        width: 120px;
+    }
+
+
+}
+
+@media only screen and (max-width: 280px){
+
+    .logo h1{
+        font-size: 21px;
+    }
+    .buscador input{
+        width: 100px;
+    }
+
+    .pagos img{
+        width: 120px;
+    }
+
+    .redes li{
+        font-size: 30px;
+    }
+
+    
+}
