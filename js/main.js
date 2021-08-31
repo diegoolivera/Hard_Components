@@ -1,20 +1,3 @@
-//evento menu hamburguesa
-const menu = document.getElementById("listaProductos");
-const botonAbrir = document.getElementById("botonAbrirMenu");
-const botonCerrar = document.getElementById("cerrarMenu")
-
-const abrir = ()=>{
-    menu.style.display = "flex";
-    menu.style.top = "0";
-}
-
-const cerrar = ()=>{
-    menu.style.top = "-1000%"
-}
-
-
-botonAbrir.addEventListener("click",abrir);
-botonCerrar.addEventListener("click",cerrar);
 
 
 
@@ -55,18 +38,6 @@ let productos = [
     {id:31,nombre:"articulo31",precio:4000,cantidad:40,imagen:"img/articulos/tecladoKumara.jpg"},
 
 ];
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -117,7 +88,33 @@ const agregarAlcarrito = (boton, i) => {
     })
 }
 
+const crearImagen = (i)=>{
+    let imagen = document.createElement("img");
+    imagen.setAttribute("src", productos[i].imagen);
+    imagen.setAttribute("class","imagenCard");
+    return imagen
+}
 
+const crearNombre=(i)=>{
+    let nombre = document.createElement("p");
+    nombre.innerHTML=productos[i].nombre;
+    nombre.setAttribute("class","contenedorDescripcion");
+    return nombre
+}
+
+const crearPrecio = (i)=>{
+    let precio = document.createElement("p");
+    precio.innerHTML=`$${productos[i].precio}`;
+    precio.setAttribute("class","contenedorDescripcion");
+    return precio
+}
+
+const crearBoton = (i)=>{
+    let boton = document.createElement("button");
+    boton.innerHTML= "comprar";
+    boton.setAttribute("class","botonCard");
+    return boton
+}
 
 //obtenemos la seccion para las card
 let seccion = document.getElementById("seccionArticulos");
@@ -129,22 +126,13 @@ for (let i = 0; i < productos.length; i++) {
     let tarjeta = document.createElement("article");
     tarjeta.setAttribute("class","card");
 
-    let imagen = document.createElement("img");
-    imagen.setAttribute("src", productos[i].imagen);
-    imagen.setAttribute("class","imagenCard");
     
-    let nombre = document.createElement("p");
-    nombre.innerHTML=productos[i].nombre;
-    nombre.setAttribute("class","contenedorDescripcion");
-
-    let precio = document.createElement("p");
-    precio.innerHTML=`$${productos[i].precio}`;
-    precio.setAttribute("class","contenedorDescripcion");
-
-    let boton = document.createElement("button");
-    boton.innerHTML= "comprar";
-    boton.setAttribute("class","botonCard");
-
+    
+    let imagen = crearImagen(i);
+    let nombre = crearNombre(i)
+    let precio = crearPrecio(i)
+    let boton = crearBoton(i)
+    
     let hr = document.createElement("hr");
     hr.setAttribute("class","linea");
     
@@ -156,11 +144,6 @@ for (let i = 0; i < productos.length; i++) {
     tarjeta.appendChild(boton);
     
     seccion.appendChild(tarjeta);
-
-
-
-
-
 
     //le pasa ala funcion el boton y el objeto producto
     agregarAlcarrito(boton,i)
