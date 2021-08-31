@@ -5,9 +5,9 @@
 //base de productos
 
 let productos = [
-    {id:1,nombre:"articulo1",precio:16000,cantidad:9,imagen:"img/articulos/auriculares2.jpg"},
+    {id:1,nombre:"placa video 2080ti",precio:16000,cantidad:9,imagen:"img/articulos/auriculares2.jpg"},
     {id:2,nombre:"articulo2",precio:16000,cantidad:2,imagen:"img/articulos/auriculares3.jpg"},
-    {id:3,nombre:"articulo3",precio:6000,cantidad:7,imagen:"img/articulos/cooler.jpg"},
+    {id:3,nombre:"placa video 2080ti",precio:6000,cantidad:7,imagen:"img/articulos/cooler.jpg"},
     {id:4,nombre:"articulo4",precio:6500,cantidad:22,imagen:"img/articulos/cooler2.jpg"},
     {id:5,nombre:"articulo5",precio:25000,cantidad:24,imagen:"img/articulos/core7.jpg"},
     {id:6,nombre:"articulo6",precio:50000,cantidad:24,imagen:"img/articulos/core9.jpg"},
@@ -15,10 +15,10 @@ let productos = [
     {id:8,nombre:"articulo8",precio:5000,cantidad:24,imagen:"img/articulos/discoSolido.jpg"},
     {id:9,nombre:"articulo9",precio:11000,cantidad:24,imagen:"img/articulos/fuente asus.jpg"},
     {id:10,nombre:"articulo10",precio:7000,cantidad:24,imagen:"img/articulos/gabinete1.jpg"},
-    {id:11,nombre:"articulo11",precio:5000,cantidad:24,imagen:"img/articulos/gabinete2.jpg"},
+    {id:11,nombre:"placa video 2080ti",precio:5000,cantidad:24,imagen:"img/articulos/gabinete2.jpg"},
     {id:12,nombre:"articulo12",precio:4000,cantidad:24,imagen:"img/articulos/gabinete3.jpg"},
     {id:13,nombre:"articulo13",precio:6000,cantidad:24,imagen:"img/articulos/gabinete4.jpg"},
-    {id:14,nombre:"articulo14",precio:5600,cantidad:24,imagen:"img/articulos/gabinete5.jpg"},
+    {id:14,nombre:"placa video 2080ti",precio:5600,cantidad:24,imagen:"img/articulos/gabinete5.jpg"},
     {id:15,nombre:"articulo15",precio:4000,cantidad:24,imagen:"img/articulos/memoriaRam1.jpg"},
     {id:16,nombre:"articulo16",precio:6000,cantidad:24,imagen:"img/articulos/motherAmd.jpg"},
     {id:17,nombre:"articulo17",precio:7500,cantidad:24,imagen:"img/articulos/motherIntel.jpg"},
@@ -38,6 +38,28 @@ let productos = [
     {id:31,nombre:"articulo31",precio:4000,cantidad:40,imagen:"img/articulos/tecladoKumara.jpg"},
 
 ];
+
+
+
+
+
+//evento menu hamburguesa
+const menu = document.getElementById("listaProductos");
+const botonAbrir = document.getElementById("botonAbrirMenu");
+const botonCerrar = document.getElementById("cerrarMenu")
+
+const abrir = ()=>{
+    menu.style.display = "flex";
+    menu.style.top = "0";
+}
+
+const cerrar = ()=>{
+    menu.style.top = "-1000%"
+}
+
+
+botonAbrir.addEventListener("click",abrir);
+botonCerrar.addEventListener("click",cerrar);
 
 
 
@@ -88,28 +110,28 @@ const agregarAlcarrito = (boton, i) => {
     })
 }
 
-const crearImagen = (i)=>{
+const crearImagen = (i,v)=>{
     let imagen = document.createElement("img");
-    imagen.setAttribute("src", productos[i].imagen);
+    imagen.setAttribute("src", v[i].imagen);
     imagen.setAttribute("class","imagenCard");
     return imagen
 }
 
-const crearNombre=(i)=>{
+const crearNombre=(i,v)=>{
     let nombre = document.createElement("p");
-    nombre.innerHTML=productos[i].nombre;
+    nombre.innerHTML=v[i].nombre;
     nombre.setAttribute("class","contenedorDescripcion");
     return nombre
 }
 
-const crearPrecio = (i)=>{
+const crearPrecio = (i,v)=>{
     let precio = document.createElement("p");
-    precio.innerHTML=`$${productos[i].precio}`;
+    precio.innerHTML=`$${v[i].precio}`;
     precio.setAttribute("class","contenedorDescripcion");
     return precio
 }
 
-const crearBoton = (i)=>{
+const crearBoton = ()=>{
     let boton = document.createElement("button");
     boton.innerHTML= "comprar";
     boton.setAttribute("class","botonCard");
@@ -120,37 +142,78 @@ const crearBoton = (i)=>{
 let seccion = document.getElementById("seccionArticulos");
 
 //recorre la mini base de datos
-for (let i = 0; i < productos.length; i++) {
+const mostrar = (v)=>{
 
-    // creamos elementos de la tarjeta
-    let tarjeta = document.createElement("article");
-    tarjeta.setAttribute("class","card");
 
-    
-    
-    let imagen = crearImagen(i);
-    let nombre = crearNombre(i)
-    let precio = crearPrecio(i)
-    let boton = crearBoton(i)
-    
-    let hr = document.createElement("hr");
-    hr.setAttribute("class","linea");
-    
+    for (let i = 0; i < v.length; i++) {
 
-    tarjeta.appendChild(imagen);
-    tarjeta.appendChild(hr);
-    tarjeta.appendChild(nombre);
-    tarjeta.appendChild(precio);
-    tarjeta.appendChild(boton);
+        // creamos elementos de la tarjeta
+        let tarjeta = document.createElement("article");
+        tarjeta.setAttribute("class","card");
     
-    seccion.appendChild(tarjeta);
+        
+        
+        let imagen = crearImagen(i,v);
+        let nombre = crearNombre(i,v)
+        let precio = crearPrecio(i,v)
+        let boton = crearBoton()
+        
+        let hr = document.createElement("hr");
+        hr.setAttribute("class","linea");
+        
+    
+        tarjeta.appendChild(imagen);
+        tarjeta.appendChild(hr);
+        tarjeta.appendChild(nombre);
+        tarjeta.appendChild(precio);
+        tarjeta.appendChild(boton);
+        
+        seccion.appendChild(tarjeta);
+    
+        //le pasa ala funcion el boton y el objeto producto
+        agregarAlcarrito(boton,i);
+        
+    
+    }
 
-    //le pasa ala funcion el boton y el objeto producto
-    agregarAlcarrito(boton,i)
-    
+
 
 }
 
+
+
+
+//buscar elemento
+
+const buscarElemento=()=>{
+
+    let aux = [];
+    let item = document.getElementById("busqueda").value;
+
+    for (const i of productos) {
+         
+        if (i.nombre ==item) {
+            
+            aux.push(i);
+            console.log(aux.length)
+            mostrar(aux);
+            aux=[]
+            console.log(i.nombre)
+            console.log(i.imagen)
+            console.log(i.precio)
+            
+        }
+     }
+
+      
+    
+      
+    
+}
+
+let lupa = document.getElementById("lupa");
+
+lupa.addEventListener("click",buscarElemento)
 
 
 
