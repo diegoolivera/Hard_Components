@@ -5,9 +5,9 @@
 //base de productos
 
 let productos = [
-    {id:1,nombre:"placa video 2080ti",precio:16000,cantidad:9,imagen:"img/articulos/auriculares2.jpg"},
+    {id:1,nombre:"articulo1",precio:16000,cantidad:9,imagen:"img/articulos/auriculares2.jpg"},
     {id:2,nombre:"articulo2",precio:16000,cantidad:2,imagen:"img/articulos/auriculares3.jpg"},
-    {id:3,nombre:"placa video 2080ti",precio:6000,cantidad:7,imagen:"img/articulos/cooler.jpg"},
+    {id:3,nombre:"articulo3",precio:6000,cantidad:7,imagen:"img/articulos/cooler.jpg"},
     {id:4,nombre:"articulo4",precio:6500,cantidad:22,imagen:"img/articulos/cooler2.jpg"},
     {id:5,nombre:"articulo5",precio:25000,cantidad:24,imagen:"img/articulos/core7.jpg"},
     {id:6,nombre:"articulo6",precio:50000,cantidad:24,imagen:"img/articulos/core9.jpg"},
@@ -15,10 +15,10 @@ let productos = [
     {id:8,nombre:"articulo8",precio:5000,cantidad:24,imagen:"img/articulos/discoSolido.jpg"},
     {id:9,nombre:"articulo9",precio:11000,cantidad:24,imagen:"img/articulos/fuente asus.jpg"},
     {id:10,nombre:"articulo10",precio:7000,cantidad:24,imagen:"img/articulos/gabinete1.jpg"},
-    {id:11,nombre:"placa video 2080ti",precio:5000,cantidad:24,imagen:"img/articulos/gabinete2.jpg"},
+    {id:11,nombre:"articulo11",precio:5000,cantidad:24,imagen:"img/articulos/gabinete2.jpg"},
     {id:12,nombre:"articulo12",precio:4000,cantidad:24,imagen:"img/articulos/gabinete3.jpg"},
     {id:13,nombre:"articulo13",precio:6000,cantidad:24,imagen:"img/articulos/gabinete4.jpg"},
-    {id:14,nombre:"placa video 2080ti",precio:5600,cantidad:24,imagen:"img/articulos/gabinete5.jpg"},
+    {id:14,nombre:"articulo14",precio:5600,cantidad:24,imagen:"img/articulos/gabinete5.jpg"},
     {id:15,nombre:"articulo15",precio:4000,cantidad:24,imagen:"img/articulos/memoriaRam1.jpg"},
     {id:16,nombre:"articulo16",precio:6000,cantidad:24,imagen:"img/articulos/motherAmd.jpg"},
     {id:17,nombre:"articulo17",precio:7500,cantidad:24,imagen:"img/articulos/motherIntel.jpg"},
@@ -182,11 +182,12 @@ const mostrar = (v)=>{
 
 
 
-
+/*
 //buscar elemento
 
 const buscarElemento=()=>{
 
+    limpiar()
     let aux = [];
     let item = document.getElementById("busqueda").value;
 
@@ -198,9 +199,7 @@ const buscarElemento=()=>{
             console.log(aux.length)
             mostrar(aux);
             aux=[]
-            console.log(i.nombre)
-            console.log(i.imagen)
-            console.log(i.precio)
+
             
         }
      }
@@ -211,11 +210,31 @@ const buscarElemento=()=>{
     
 }
 
+
 let lupa = document.getElementById("lupa");
 
 lupa.addEventListener("click",buscarElemento)
 
+*/
+
+/*funcion para limpiar todos los articulos cuando se
+  hace una busqueda */
+
+/*
+const limpiar = ()=>{
 
 
+    let grid = document.getElementById("seccionArticulos");
+    let card = document.getElementsByClassName("card")
+
+    for (let i = 0; i < card.length; i++) {
+        
+        grid.parentNode.removeChild(card[i])
+    }
 
 
+}
+*/
+
+
+mostrar(productos)
