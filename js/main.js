@@ -42,199 +42,67 @@ let productos = [
 
 
 
-
-//evento menu hamburguesa
-const menu = document.getElementById("listaProductos");
-const botonAbrir = document.getElementById("botonAbrirMenu");
-const botonCerrar = document.getElementById("cerrarMenu")
-
-const abrir = ()=>{
-    menu.style.display = "flex";
-    menu.style.top = "0";
-}
-
-const cerrar = ()=>{
-    menu.style.top = "-1000%"
-}
-
-
-botonAbrir.addEventListener("click",abrir);
-botonCerrar.addEventListener("click",cerrar);
-
-
-
-
-
-//agregar al carrito
-
-//recibe el boton que clickeo y la posicion del objeto
-const agregarAlcarrito = (boton, i) => {
-    
-    //le agrega evento al boton
-    boton.addEventListener("click", () => {
-        
-        //sweet alert
-        Swal.fire({
-            position: 'top-center',
-            icon: 'success',
-            title: 'Agregado al carrito',
-            showConfirmButton: false,
-            timer: 1000
-          })
-
-        //guarda los datos de el producto
-        const nombre = productos[i].nombre;
-        const precio = productos[i].precio;
-
-       
-        //creo un objeto literal con los datos almacenados antes
-        let productosSeleccionado = {
-            nombre,
-            precio,
-        }       
-        
-        //verifica si hay ya un array de productos seleccionados
-        //si no hay crea uno y lo guarda
-        if(localStorage.getItem('seleccionados') === null){
-            let listaProductos = []
-            listaProductos.push(productosSeleccionado)
-            localStorage.setItem('seleccionados', JSON.stringify(listaProductos))
-        }
-        else{ 
-            //en el caso de que si haya uno
-            //lo trae guarda el nuevo producto y vuelve a guardar el array
-            let listaProductoLocal = JSON.parse(localStorage.getItem('seleccionados'));
-            listaProductoLocal.push(productosSeleccionado);
-            localStorage.setItem('seleccionados', JSON.stringify(listaProductoLocal))
-        }             
+const agregarProdcuto = (i)=>{
+    Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Agregado al carrito',
+        showConfirmButton: false,
+        timer: 1000
     })
-}
 
-const crearImagen = (i,v)=>{
-    let imagen = document.createElement("img");
-    imagen.setAttribute("src", v[i].imagen);
-    imagen.setAttribute("class","imagenCard");
-    return imagen
-}
-
-const crearNombre=(i,v)=>{
-    let nombre = document.createElement("p");
-    nombre.innerHTML=v[i].nombre;
-    nombre.setAttribute("class","contenedorDescripcion");
-    return nombre
-}
-
-const crearPrecio = (i,v)=>{
-    let precio = document.createElement("p");
-    precio.innerHTML=`$${v[i].precio}`;
-    precio.setAttribute("class","contenedorDescripcion");
-    return precio
-}
-
-const crearBoton = ()=>{
-    let boton = document.createElement("button");
-    boton.innerHTML= "comprar";
-    boton.setAttribute("class","botonCard");
-    return boton
-}
-
-//obtenemos la seccion para las card
-let seccion = document.getElementById("seccionArticulos");
-
-//recorre la mini base de datos
-const mostrar = (v)=>{
-
-
-    for (let i = 0; i < v.length; i++) {
-
-        // creamos elementos de la tarjeta
-        let tarjeta = document.createElement("article");
-        tarjeta.setAttribute("class","card");
-    
-        
-        
-        let imagen = crearImagen(i,v);
-        let nombre = crearNombre(i,v)
-        let precio = crearPrecio(i,v)
-        let boton = crearBoton()
-        
-        let hr = document.createElement("hr");
-        hr.setAttribute("class","linea");
-        
-    
-        tarjeta.appendChild(imagen);
-        tarjeta.appendChild(hr);
-        tarjeta.appendChild(nombre);
-        tarjeta.appendChild(precio);
-        tarjeta.appendChild(boton);
-        
-        seccion.appendChild(tarjeta);
-    
-        //le pasa ala funcion el boton y el objeto producto
-        agregarAlcarrito(boton,i);
-        
-    
+    if(localStorage.getItem('seleccionados') === null){
+        let listaProductos = []
+        listaProductos.push(i)
+        localStorage.setItem('seleccionados', JSON.stringify(listaProductos))
     }
-
-
-
+    else{ 
+        //en el caso de que si haya uno
+        //lo trae guarda el nuevo producto y vuelve a guardar el array
+        let listaProductoLocal = JSON.parse(localStorage.getItem('seleccionados'));
+        listaProductoLocal.push(i);
+        localStorage.setItem('seleccionados', JSON.stringify(listaProductoLocal))
+    }             
 }
 
 
-
-/*
-//buscar elemento
-
-const buscarElemento=()=>{
-
-    limpiar()
-    let aux = [];
-    let item = document.getElementById("busqueda").value;
+const mostrarProductos = (productos)=>{
 
     for (const i of productos) {
-         
-        if (i.nombre ==item) {
-            
-            aux.push(i);
-            console.log(aux.length)
-            mostrar(aux);
-            aux=[]
 
-            
-        }
-     }
-
-      
-    
-      
-    
-}
-
-
-let lupa = document.getElementById("lupa");
-
-lupa.addEventListener("click",buscarElemento)
-
-*/
-
-/*funcion para limpiar todos los articulos cuando se
-  hace una busqueda */
-
-/*
-const limpiar = ()=>{
-
-
-    let grid = document.getElementById("seccionArticulos");
-    let card = document.getElementsByClassName("card")
-
-    for (let i = 0; i < card.length; i++) {
+        $("#seccionArticulos").append(`
         
-        grid.parentNode.removeChild(card[i])
+        <article class="contenedor">
+            <div class="card">
+                <img class="imagenCard" src=${i.imagen} alt="imagenProducto">
+                <hr class="linea">
+                <div class="contenedorDescripcion">
+                    <p> ${i.nombre}</p>
+                    <p> $${i.precio}</p>
+                </div>
+                <button class="botonCard" id="btn${i.id}">Agregar</button>
+
+            </div>
+
+        </article>
+        
+        
+        `)
+
+
+       //evento para el boton
+        $(`#btn${i.id}`).on("click",function(){
+
+            let seleccion = i;
+            
+            agregarProdcuto(seleccion)
+           
+           
+        })
+            
     }
-
-
+    
 }
-*/
 
 
-mostrar(productos)
+mostrarProductos(productos)
