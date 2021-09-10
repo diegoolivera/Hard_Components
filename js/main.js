@@ -104,5 +104,34 @@ const mostrarProductos = (productos)=>{
     
 }
 
+const borrarProducto = ()=>{
+    $(".contenedor").remove()
+    
+}
+
+const buscarProducto = (productos)=>{
+    let prod = []
+    $("#lupa").on("click",()=>{
+
+        let itemNombre =$("#busqueda").val();
+        let item = productos.find(i => i.nombre == itemNombre)
+        prod.push(item)
+        borrarProducto()
+        mostrarProductos(prod)
+       
+        
+
+
+        
+
+    })
+    
+
+}
+/*buscarProducto(productos)*/
+
 
 mostrarProductos(productos)
+buscarProducto(productos)
+
+
