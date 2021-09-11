@@ -126,16 +126,20 @@ const buscarProducto = (productos)=>{
 
 }
 
-const filtroProducto = (productos)=>{
+// const filtroProducto = (productos)=>{
     
-    filtro = $("#listaProductos li").on("click").html()
-    console.log(filtro)
+//     let filtro =$("#listaProductos li");
+//     filtro.on("click",()=>{
+//         console.log($("a").html())
+//     })
+    
+//     let filtrados = productos.filter(i => i.tipo == "algo")
+    
+//     mostrarProductos(filtrados)
 
-    // filtrados = productos.filter(i=> i.tipo == filtro)
-
     
     
-}
+// }
 
 
 
