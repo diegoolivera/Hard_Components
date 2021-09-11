@@ -10,10 +10,11 @@ $.get(url,(respuesta,estado)=>{
             $("#transporte").append(
 
                 `
-                <article>
-                    <p>${auto.nome}</p>
-                </article>
-                
+                    <article class="card">
+                       
+                        <p class="card__nombre">${auto.nome}</p>
+                        
+                    </article>
                 `
             )
         }

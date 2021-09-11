@@ -1,0 +1,31 @@
+
+body{
+    background-color: rgb(0, 5, 7);
+}
+
+/*header*/
+
+header a{
+    text-decoration: none;
+    color: rgb(219, 230, 246);
+    font-size: 20px;
+}
+
+
+
+/*seccion*/
+
+.titulo{
+    color: #5f9ea0;
+    text-align: center;
+    font-size: 30px;
+}
+
+/*card*/
+
+.card__nombre{
+    color: rgb(201, 227, 245);
+    font-size: 20px;
+    text-align: center;
+    
+}
