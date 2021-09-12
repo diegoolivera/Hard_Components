@@ -60,6 +60,7 @@ const filtrado = (f)=>{
         borrarProducto(productos)
         let aux = productos.filter(i => i.tipo == f)
         mostrarProductos(aux)
+        
     }
     else if (f=="Perifericos") {
         borrarProducto(productos)
@@ -76,6 +77,7 @@ const filtrado = (f)=>{
         borrarProducto(productos)
         let aux = productos.filter(i => i.tipo == f)
         mostrarProductos(aux)
+        
         
     }
     else if (f=="Mothers") {
@@ -94,6 +96,7 @@ const filtrado = (f)=>{
         borrarProducto(productos)
         let aux = productos.filter(i => i.tipo == f)
         mostrarProductos(aux)
+        
         
     }
     else if (f=="Almacenamiento") {
@@ -132,7 +135,6 @@ const generarCategorias = ()=>{
     }
 }
 
-generarCategorias()
 
 
 
@@ -225,6 +227,7 @@ const buscarProducto = (productos)=>{
 
 
 const ordenar = ()=>{
+    
     let select = $("#comboSeleccion").val();
     console.log(select)
     if (select == "menor") {
@@ -237,6 +240,7 @@ const ordenar = ()=>{
             return b.precio - a.precio;
         })
     }
+    
     borrarProducto()
     mostrarProductos(productos)
 
@@ -246,8 +250,19 @@ const ordenar = ()=>{
 
 
 
-mostrarProductos(productos)
-buscarProducto(productos)
 
-$("#comboSeleccion").on("change",ordenar);
 
+$( document ).ready(function() {
+    generarCategorias()
+    mostrarProductos(productos)
+    buscarProducto(productos)
+    
+
+    $("#comboSeleccion").on("change",ordenar);  
+
+
+
+
+  });
+
+  
