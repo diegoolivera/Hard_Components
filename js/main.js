@@ -20,8 +20,8 @@ let productos = [
     {id:13,nombre:"articulo13",precio:6000,cantidad:24,imagen:"/img/articulos/gabinete4.jpg",tipo:"Gabinetes"},
     {id:14,nombre:"articulo14",precio:5600,cantidad:24,imagen:"/img/articulos/gabinete5.jpg",tipo:"Gabinetes"},
     {id:15,nombre:"articulo15",precio:4000,cantidad:24,imagen:"/img/articulos/memoriaRam1.jpg",tipo:"Almacenamiento"},
-    {id:16,nombre:"articulo16",precio:6000,cantidad:24,imagen:"/img/articulos/motherAmd.jpg",tipo:"Mother"},
-    {id:17,nombre:"articulo17",precio:7500,cantidad:24,imagen:"/img/articulos/motherIntel.jpg",tipo:"Mother"},
+    {id:16,nombre:"articulo16",precio:6000,cantidad:24,imagen:"/img/articulos/motherAmd.jpg",tipo:"Mothers"},
+    {id:17,nombre:"articulo17",precio:7500,cantidad:24,imagen:"/img/articulos/motherIntel.jpg",tipo:"Mothers"},
     {id:18,nombre:"articulo18",precio:3200,cantidad:30,imagen:"/img/articulos/mouse2.jpg",tipo:"Perifericos"},
     {id:19,nombre:"articulo19",precio:4000,cantidad:50,imagen:"/img/articulos/mouse3.jpg",tipo:"Perifericos"},
     {id:20,nombre:"articulo20",precio:3200,cantidad:50,imagen:"/img/articulos/mouse4.jpg",tipo:"Perifericos"},
@@ -33,13 +33,120 @@ let productos = [
     {id:26,nombre:"articulo26",precio:500000,cantidad:9,imagen:"/img/articulos/placaVideo.jpg",tipo:"Placas Video"},
     {id:27,nombre:"articulo27",precio:400000,cantidad:15,imagen:"/img/articulos/placavideo2.jpg",tipo:"Placas Video"},
     {id:28,nombre:"articulo28",precio:3000,cantidad:23,imagen:"/img/articulos/ram.jpg",tipo:"Almacenamiento"},
-    {id:29,nombre:"articulo29",precio:53000,cantidad:12,imagen:"/img/articulos/ryzen 7.jpg",tipo:"Procesadores"},
+    {id:29,nombre:"articulo29",precio:53000,cantidad:12,imagen:"/img/articulos/ryzen7.jpg",tipo:"Procesadores"},
     {id:30,nombre:"articulo30",precio:3400,cantidad:35,imagen:"/img/articulos/teclado4.jpg",tipo:"Perifericos"},
     {id:31,nombre:"articulo31",precio:4000,cantidad:40,imagen:"/img/articulos/tecladoKumara.jpg",tipo:"Perifericos"},
+    {id:31,nombre:"fuente 1",precio:4000,cantidad:10,imagen:"/img/articulos/fuente1.jpg",tipo:"Fuentes"},
+    {id:31,nombre:"fuente 2",precio:8000,cantidad:12,imagen:"/img/articulos/fuente2.jpg",tipo:"Fuentes"},
+    {id:31,nombre:"fuente 3",precio:9300,cantidad:4,imagen:"/img/articulos/fuente3.jpg",tipo:"Fuentes"},
 
 ];
 
-localStorage.clear()
+//agregar categorias
+
+
+const categorias = ["Todo","Netbooks","Perifericos","Placas Video","Procesadores","Mothers","Ventilacion","Fuentes","Almacenamiento","Gabinetes","Accesorios"]
+
+// const generarCategorias = ()=>{
+//     let n = 0;
+//     for (const i of categorias) {
+//         $(".listaProductos").append(`<li><a href="#" id="item${n}">${i}</a></li>`);
+        
+//         $(`#item${n}`).on("click",()=>{
+//             console.log(i)
+//         })
+//         n++;
+//     }
+// }
+
+
+const filtrado = (f)=>{
+
+    
+
+    if (f == "Todo") {
+        borrarProducto(productos)
+        mostrarProductos(productos)
+    }
+    else if (f=="Netbooks") {
+
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+    }
+    else if (f=="Perifericos") {
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+    }
+    else if (f=="Placas Video") {
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+        
+    }
+    else if (f=="Procesadores") {
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+        
+    }
+    else if (f=="Mothers") {
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+        
+    }
+    else if (f=="Ventilacion") {
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+        
+    }
+    else if (f=="Fuentes") {
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+        
+    }
+    else if (f=="Almacenamiento") {
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+        
+    }
+    else if (f=="Gabinetes") {
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+        
+    }
+    else if (f=="Accesorios") {
+        borrarProducto(productos)
+        let aux = productos.filter(i => i.tipo == f)
+        mostrarProductos(aux)
+        
+    }
+
+    
+}
+
+const generarCategorias = ()=>{
+
+    for (let i= 0; i < categorias.length; i++) {
+        $(".listaProductos").append(`<li><a href="#" id="item${i}">${categorias[i]}</a></li>`);
+
+        $(`#item${i}`).on("click",()=>{
+            
+            filtrado(categorias[i])
+        })
+
+        
+    }
+}
+
+generarCategorias()
+
 
 
 const agregarProdcuto = (i)=>{
@@ -143,11 +250,25 @@ const buscarProducto = (productos)=>{
 
 
 
-/*buscarProducto(productos)*/
+const ordenar = ()=>{
+    let select = $("#comboSeleccion").val();
+    console.log(select)
+    if (select == "menor") {
+        productos.sort((a,b)=>{
+            return a.precio - b.precio;
+        });
+    }
+    else if (select == "mayor") {
+        productos.sort((a,b)=>{
+            return b.precio - a.precio;
+        })
+    }
+
+}
 
 
 mostrarProductos(productos)
 buscarProducto(productos)
-filtroProducto()
 
+$("#comboSeleccion").on("change",ordenar);
 
