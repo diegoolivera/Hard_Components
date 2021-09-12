@@ -47,19 +47,6 @@ let productos = [
 
 const categorias = ["Todo","Netbooks","Perifericos","Placas Video","Procesadores","Mothers","Ventilacion","Fuentes","Almacenamiento","Gabinetes","Accesorios"]
 
-// const generarCategorias = ()=>{
-//     let n = 0;
-//     for (const i of categorias) {
-//         $(".listaProductos").append(`<li><a href="#" id="item${n}">${i}</a></li>`);
-        
-//         $(`#item${n}`).on("click",()=>{
-//             console.log(i)
-//         })
-//         n++;
-//     }
-// }
-
-
 const filtrado = (f)=>{
 
     
@@ -233,20 +220,7 @@ const buscarProducto = (productos)=>{
 
 }
 
-// const filtroProducto = (productos)=>{
-    
-//     let filtro =$("#listaProductos li");
-//     filtro.on("click",()=>{
-//         console.log($("a").html())
-//     })
-    
-//     let filtrados = productos.filter(i => i.tipo == "algo")
-    
-//     mostrarProductos(filtrados)
 
-    
-    
-// }
 
 
 
@@ -263,8 +237,13 @@ const ordenar = ()=>{
             return b.precio - a.precio;
         })
     }
+    borrarProducto()
+    mostrarProductos(productos)
 
 }
+
+
+
 
 
 mostrarProductos(productos)
