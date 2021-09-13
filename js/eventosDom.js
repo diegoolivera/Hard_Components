@@ -20,3 +20,5 @@ const cerrar = ()=>{
 
 botonAbrir.addEventListener("click",abrir);
 botonCerrar.addEventListener("click",cerrar);
+
+
