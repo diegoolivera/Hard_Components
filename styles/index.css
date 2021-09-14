@@ -284,6 +284,7 @@ header{
         display: none;
         background-color: #187f99;
         font-size: 40px;
+        z-index: 30;
     }
 
     .botonAbrirMenu{
