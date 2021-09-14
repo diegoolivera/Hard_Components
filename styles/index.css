@@ -168,6 +168,8 @@ header{
     margin-top: 40px;
     
 }
+
+
 .card{
     background-color: #DCDCDC;
     width: 250px;
@@ -269,6 +271,7 @@ header{
         width: 20px;
     }
 
+    
     .listaProductos {
         height: 100vh;
         position: fixed;

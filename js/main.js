@@ -125,7 +125,6 @@ const generarCategorias = ()=>{
 
     for (let i= 0; i < categorias.length; i++) {
         $(".listaProductos").append(`<li><a href="#" id="item${i}">${categorias[i]}</a></li>`);
-
         $(`#item${i}`).on("click",()=>{
             
             filtrado(categorias[i])
@@ -168,7 +167,7 @@ const mostrarProductos = (productos)=>{
 
         $("#seccionArticulos").append(`
         
-        <article class="contenedor">
+        <article class="contenedor" >
             <div class="card">
                 <img class="imagenCard" src=${i.imagen} alt="imagenProducto">
                 <hr class="linea">
@@ -184,6 +183,8 @@ const mostrarProductos = (productos)=>{
         
         
         `)
+        
+        
 
 
        //evento para el boton
@@ -192,13 +193,14 @@ const mostrarProductos = (productos)=>{
             let seleccion = i;
             
             agregarProdcuto(seleccion)
-           
-           
+  
         })
             
     }
     
 }
+
+
 
 const borrarProducto = ()=>{
     $(".contenedor").remove()
@@ -215,12 +217,15 @@ const buscarProducto = (productos)=>{
         let item = productos.find(i => i.nombre == itemNombre)
         prod.push(item)
         
+        
         mostrarProductos(prod)
        
     })
     
 
 }
+
+
 
 
 
