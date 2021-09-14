@@ -183,6 +183,10 @@ const mostrarProductos = (productos)=>{
         
         
         `)
+
+        //animaciones
+        $(".card").hide();
+        $(".card").fadeIn("slow");
         
         
 
