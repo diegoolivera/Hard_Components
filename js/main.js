@@ -36,14 +36,16 @@ let productos = [
     {id:29,nombre:"articulo29",precio:53000,cantidad:12,imagen:"/img/articulos/ryzen7.jpg",tipo:"Procesadores"},
     {id:30,nombre:"articulo30",precio:3400,cantidad:35,imagen:"/img/articulos/teclado4.jpg",tipo:"Perifericos"},
     {id:31,nombre:"articulo31",precio:4000,cantidad:40,imagen:"/img/articulos/tecladoKumara.jpg",tipo:"Perifericos"},
-    {id:31,nombre:"fuente 1",precio:4000,cantidad:10,imagen:"/img/articulos/fuente1.jpg",tipo:"Fuentes"},
-    {id:31,nombre:"fuente 2",precio:8000,cantidad:12,imagen:"/img/articulos/fuente2.jpg",tipo:"Fuentes"},
-    {id:31,nombre:"fuente 3",precio:9300,cantidad:4,imagen:"/img/articulos/fuente3.jpg",tipo:"Fuentes"},
+    {id:32,nombre:"fuente 1",precio:4000,cantidad:10,imagen:"/img/articulos/fuente1.jpg",tipo:"Fuentes"},
+    {id:33,nombre:"fuente 2",precio:8000,cantidad:12,imagen:"/img/articulos/fuente2.jpg",tipo:"Fuentes"},
+    {id:34,nombre:"fuente 3",precio:9300,cantidad:4,imagen:"/img/articulos/fuente3.jpg",tipo:"Fuentes"},
 
 ];
 
-//agregar categorias
 
+localStorage.clear()
+
+//agregar categorias
 
 const categorias = ["Todo","Netbooks","Perifericos","Placas Video","Procesadores","Mothers","Ventilacion","Fuentes","Almacenamiento","Gabinetes","Accesorios"]
 

@@ -10,15 +10,38 @@
 <body>
 
     <main>
-        <section>
-            <form>
-                <fieldset>
-                    <input type="text">
-                    <input type="text">
-                </fieldset>
+        <section id="pago">
+                <form class="formulario">
+                
+                    <label class="contenedor">Nombre</label>
+                    <div class="contenedor">
+                        <input type="text">
+                    </div>
 
+                    <label class="contenedor">Apellido</label>
+                    <div class="contenedor">
+                        <input type="text">
+                    </div>
 
-            </form>
+                    <label class="contenedor"> Direccion</label>
+                    <div class="contenedor" >
+                        <input type="text">
+                    </div>
+
+                    <label class="contenedor">Forma de Pago</label>
+                    <div class="contenedor">
+                        <select name="formaPago">
+                            <option value="efectivo">Efectivo</option>
+                            <option value="mercadopago">Mercado Pago</option>
+                            <option value="tarjeta">Tarjeta</option>
+                        </select>
+                    </div>
+
+                    <div class="contenedor botones">
+                        <button class=" btn cancel"> <a href="/">Cancelar</a> </button>
+                        <button class=" btn comprar">Comprar</button>
+                    </div>
+                 </form>
         </section>
     </main>
 </body>

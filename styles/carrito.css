@@ -104,3 +104,24 @@ header{
     color: #ff0000;
     padding: 10px;
 }
+
+/*detalle de compra*/
+.detalleCompra{
+    background-color: aliceblue;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+
+}
+
+.botonDetalle{
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #0b700b;
+    color: #ffffff;
+    margin: 20px;
+}
