@@ -1,8 +1,15 @@
-
+//obtenemos carrito del localStorage
 let carritoEnLocal =JSON.parse(localStorage.getItem('seleccionados'));
 
+//funciones
+
+//borra un articulo
+const borrador=()=>{
+    $(".contenedor").remove();
+}
 
 
+//borra articulos del carrito
 const borrarItem = (botonEliminar,i)=>{
 
     botonEliminar.click(()=>{
@@ -13,11 +20,11 @@ const borrarItem = (botonEliminar,i)=>{
 
         if (carritoEnLocal.length === 1) {
 
-            $(".contenedor").remove();
+            borrador()
             localStorage.clear();
             return;
         }
-        $(".contenedor").remove();
+        borrador()
 
         carritoEnLocal.splice(i, 1);
         localStorage.setItem("seleccionados", JSON.stringify(carritoEnLocal));
@@ -32,7 +39,7 @@ const borrarItem = (botonEliminar,i)=>{
 
 
 
-
+//añade los articulos seleccionados del carrito al html
 
 const mostrarCarrito = ()=>{
 
@@ -66,4 +73,11 @@ const mostrarCarrito = ()=>{
     }
 }
 
-mostrarCarrito()
+
+
+$( document ).ready(function() {
+    
+    mostrarCarrito()
+
+
+});
