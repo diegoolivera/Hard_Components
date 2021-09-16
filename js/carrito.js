@@ -53,17 +53,18 @@ const mostrarCarrito = ()=>{
         let nombre = carritoEnLocal[i].nombre;
         let precio = carritoEnLocal[i].precio;
     
-        
+        let item = carritoEnLocal[i][0];
+        let cantidad =carritoEnLocal[i][1];
         
 
         $("#listaProductos").append(`
     
         <article class="contenedor">
                     <div class="flex">
-                        <img class="imagenCard" src=${imagen} >
-                        <p> ${nombre}</p>
-                        <p> $${precio}</p>
-                        <p id="cant">0</p>
+                        <img class="imagenCard" src=${item.imagen} >
+                        <p> ${item.nombre}</p>
+                        <p> $${item.precio}</p>
+                        <p id="cant">${cantidad}</p>
                         <button id="btn${i}"> borrar</button>
     
                     </div>

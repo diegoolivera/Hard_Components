@@ -149,18 +149,33 @@ const agregarProdcuto = (i)=>{
         timer: 1000
     })
 
-    
+    let itemAgregar = [i,1]
 
     if(localStorage.getItem('seleccionados') === null){
         let listaProductos = []
-        listaProductos.push(i)
+        listaProductos.push(itemAgregar)
         localStorage.setItem('seleccionados', JSON.stringify(listaProductos))
     }
     else{ 
         //en el caso de que si haya uno
         //lo trae guarda el nuevo producto y vuelve a guardar el array
         let listaProductos = JSON.parse(localStorage.getItem('seleccionados'));
-        listaProductos.push(i);
+        let auxIndex = 0;
+        
+        if (listaProductos.some(item =>{
+            auxIndex++;
+            return item[0].id === itemAgregar[0].id;
+            
+            
+        })){
+            listaProductos[auxIndex-1][1]++;
+            
+        }
+        else{
+            listaProductos.push(itemAgregar);
+            
+        }
+        
         localStorage.setItem('seleccionados', JSON.stringify(listaProductos))
     }    
     
