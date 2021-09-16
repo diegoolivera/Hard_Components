@@ -29,6 +29,11 @@ body{
     margin-bottom: 15px;
 }
 
+.totalPagar{
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .contenedorCampos{
     height: 60%;
 }
