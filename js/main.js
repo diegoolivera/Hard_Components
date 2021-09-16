@@ -42,6 +42,10 @@ let productos = [
 
 localStorage.clear()
 
+
+
+
+
 //agregar categorias
 
 const categorias = ["Todo","Netbooks","Perifericos","Placas Video","Procesadores","Mothers","Ventilacion","Fuentes","Almacenamiento","Gabinetes","Accesorios"]
@@ -145,6 +149,8 @@ const agregarProdcuto = (i)=>{
         timer: 1000
     })
 
+    
+
     if(localStorage.getItem('seleccionados') === null){
         let listaProductos = []
         listaProductos.push(i)
@@ -165,6 +171,9 @@ const agregarProdcuto = (i)=>{
 
 const mostrarProductos = (productos)=>{
 
+    //acumulador para contar productos de carrito
+    let cantidad = 0;
+    
     for (const i of productos) {
 
         $("#seccionArticulos").append(`
@@ -194,10 +203,11 @@ const mostrarProductos = (productos)=>{
 
 
        //evento para el boton
+       
         $(`#btn${i.id}`).on("click",function(){
-
+            cantidad ++;
             let seleccion = i;
-            
+            $(".cantProducto").text(`${cantidad}`)
             agregarProdcuto(seleccion)
   
         })
@@ -270,7 +280,7 @@ $( document ).ready(function() {
     
 
     $("#comboSeleccion").on("change",ordenar);  
-
+    
 
 
 
