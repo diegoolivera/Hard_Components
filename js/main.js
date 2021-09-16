@@ -173,7 +173,7 @@ const mostrarProductos = (productos)=>{
 
     //acumulador para contar productos de carrito
     let cantidad = 0;
-    
+
     for (const i of productos) {
 
         $("#seccionArticulos").append(`
@@ -197,7 +197,7 @@ const mostrarProductos = (productos)=>{
 
         //animaciones
         $(".card").hide();
-        $(".card").fadeIn("slow");
+        $(".card").fadeIn(100);
         
         
 
