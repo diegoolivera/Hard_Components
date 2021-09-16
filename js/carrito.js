@@ -49,10 +49,6 @@ const mostrarCarrito = ()=>{
     let total = 0
     for (let  i= 0;  i< carritoEnLocal.length; i++) {
     
-        
-        let imagen = carritoEnLocal[i].imagen;
-        let nombre = carritoEnLocal[i].nombre;
-        let precio = carritoEnLocal[i].precio;
     
         let item = carritoEnLocal[i][0];
         let cantidad =carritoEnLocal[i][1];
@@ -84,12 +80,11 @@ const mostrarCarrito = ()=>{
        
     }
     $("#total").text(`Total: ${total}`)
-
+    $(".totalPagar").text(`$${total}`)
+    
     
     
 }
-
-
 
 
 
