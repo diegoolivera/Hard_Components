@@ -12,34 +12,42 @@
     <main>
         <section id="pago">
                 <form class="formulario">
-                
-                    <label class="contenedor">Nombre</label>
-                    <div class="contenedor">
-                        <input type="text">
-                    </div>
+                    
+                    <header class="header">
+                        <h2>HC</h2>
+                        <p>$2000</p>
+                    </header>
 
-                    <label class="contenedor">Apellido</label>
-                    <div class="contenedor">
-                        <input type="text">
-                    </div>
+                    <div class="contenedorCampos">
+                        <label class="contenedor">Nombre</label>
+                        <div class="contenedor">
+                            <input type="text">
+                        </div>
 
-                    <label class="contenedor"> Direccion</label>
-                    <div class="contenedor" >
-                        <input type="text">
-                    </div>
+                        <label class="contenedor">Apellido</label>
+                        <div class="contenedor">
+                            <input type="text">
+                        </div>
 
-                    <label class="contenedor">Forma de Pago</label>
-                    <div class="contenedor">
-                        <select name="formaPago">
-                            <option value="efectivo">Efectivo</option>
-                            <option value="mercadopago">Mercado Pago</option>
-                            <option value="tarjeta">Tarjeta</option>
-                        </select>
+                        <label class="contenedor"> Direccion</label>
+                        <div class="contenedor" >
+                            <input type="text">
+                        </div>
+
+                        <label class="contenedor">Forma de Pago</label>
+                        <div class="contenedor">
+                            <select class="formaPago">
+                                <option value="efectivo">Efectivo</option>
+                                <option value="mercadopago">Mercado Pago</option>
+                                <option value="tarjeta">Tarjeta</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="contenedor botones">
-                        <button class=" btn cancel"> <a href="/">Cancelar</a> </button>
-                        <button class=" btn comprar">Comprar</button>
+                        <a class=" btn cancel" href="/">Cancelar</a> </button>
+                        <a class=" btn comprar" href="">Confirmar</a>
+                        
                     </div>
                  </form>
         </section>
