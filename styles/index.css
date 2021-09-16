@@ -86,7 +86,13 @@ header{
     width: 30px;
     display: inline-block;
     text-decoration: none;
-    
+    position: absolute;
+}
+.cantProducto{
+    position: relative;
+    top: 0;
+    right: -12px;
+    color: #17df17;
     
 }
 
@@ -308,6 +314,10 @@ header{
 
     .ordena{
         align-items: center;
+    }
+
+    .cantProducto{
+        right: -8px;
     }
 
   }
