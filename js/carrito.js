@@ -31,6 +31,8 @@ const borrarItem = (botonEliminar,i)=>{
         
         mostrarCarrito()
 
+        
+
     })
 
 }
@@ -46,12 +48,14 @@ const mostrarCarrito = ()=>{
     
     for (let  i= 0;  i< carritoEnLocal.length; i++) {
     
+        
         let imagen = carritoEnLocal[i].imagen;
         let nombre = carritoEnLocal[i].nombre;
         let precio = carritoEnLocal[i].precio;
     
-        console.log(nombre)
-        console.log(precio)
+        
+        
+
         $("#listaProductos").append(`
     
         <article class="contenedor">
@@ -59,6 +63,7 @@ const mostrarCarrito = ()=>{
                         <img class="imagenCard" src=${imagen} >
                         <p> ${nombre}</p>
                         <p> $${precio}</p>
+                        <p id="cant">0</p>
                         <button id="btn${i}"> borrar</button>
     
                     </div>
@@ -66,12 +71,22 @@ const mostrarCarrito = ()=>{
         </article>
         
         `) 
+        
+        
+        
     
         const botonEliminar = $(`#btn${i}`);
-    
-        borrarItem(botonEliminar,i)
+        borrarItem(botonEliminar,i);
+
+       
     }
+
+    
+    
 }
+
+
+
 
 
 

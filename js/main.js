@@ -153,10 +153,13 @@ const agregarProdcuto = (i)=>{
     else{ 
         //en el caso de que si haya uno
         //lo trae guarda el nuevo producto y vuelve a guardar el array
-        let listaProductoLocal = JSON.parse(localStorage.getItem('seleccionados'));
-        listaProductoLocal.push(i);
-        localStorage.setItem('seleccionados', JSON.stringify(listaProductoLocal))
-    }             
+        let listaProductos = JSON.parse(localStorage.getItem('seleccionados'));
+        listaProductos.push(i);
+        localStorage.setItem('seleccionados', JSON.stringify(listaProductos))
+    }    
+    
+    
+   
 }
 
 
