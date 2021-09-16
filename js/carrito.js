@@ -22,6 +22,7 @@ const borrarItem = (botonEliminar,i)=>{
 
             borrador()
             localStorage.clear();
+            $("#total").text("Total:0")
             return;
         }
         borrador()
@@ -45,7 +46,7 @@ const borrarItem = (botonEliminar,i)=>{
 
 const mostrarCarrito = ()=>{
 
-    
+    let total = 0
     for (let  i= 0;  i< carritoEnLocal.length; i++) {
     
         
@@ -75,12 +76,14 @@ const mostrarCarrito = ()=>{
         
         
         
-    
+        total += item.precio*cantidad
+        
         const botonEliminar = $(`#btn${i}`);
         borrarItem(botonEliminar,i);
 
        
     }
+    $("#total").text(`Total: ${total}`)
 
     
     
