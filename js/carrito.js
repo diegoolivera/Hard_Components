@@ -75,12 +75,16 @@ const mostrarCarrito = ()=>{
         total += item.precio*cantidad
         
         const botonEliminar = $(`#btn${i}`);
+        
+    
         borrarItem(botonEliminar,i);
 
        
     }
-    $("#total").text(`Total: ${total}`)
+    
+    $("#total").text(`Total:$${total}`)
     $(".totalPagar").text(`$${total}`)
+    $(".total").text(`Total:$${total}`)
     
     
     

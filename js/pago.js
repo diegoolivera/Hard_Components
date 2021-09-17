@@ -60,16 +60,79 @@ $(".comprar").on("click",(e)=>{
           })  
     } 
     else {
-        alert("todo ok")
+        
+        $(".formulario").css("display","none")
+        $(".detalleCompra").css("display","block")
+        setFecha();
+        setDatosCliente();
+        mostrarDetalleCompra();
+
+
+
     }
 
     
 })
 
-let fecha = new Date();
 
-let dia = fecha.getDate();
-let mes = fecha.getMonth()+1;
-let anio = fecha.getFullYear()
+//agregamos la fecha al detalle
 
-$("#fecha").text(`Fecha Compra:${dia}/${mes}/${anio}`)
+const setFecha = ()=>{
+
+    let fecha = new Date();
+
+    let dia = fecha.getDate();
+    let mes = fecha.getMonth()+1;
+    let anio = fecha.getFullYear()
+
+    $("#fecha").text(`Fecha Compra:${dia}/${mes}/${anio}`)
+}
+
+
+
+//agregamos al detalle nombres y direccion
+
+const setDatosCliente=()=>{
+    let _nombre = $("#nombre").val();
+    let _apellido =$("#apellido").val();
+    let _direccion = $("#direccion").val();
+
+    $(".nomApe").text(`Nombre:${_nombre}-${_apellido}`)
+    $(".domicilio").text(`Direccion:${_direccion}`)
+
+}
+
+
+
+
+const mostrarDetalleCompra = ()=>{
+
+    
+    for (let  i= 0;  i< carritoEnLocal.length; i++) {
+    
+    
+        let item = carritoEnLocal[i][0];
+        let cantidad =carritoEnLocal[i][1];
+        
+
+        $("#tabla").append(`
+
+            <tr>
+                <td>${item.nombre}</td>
+                <td>${cantidad}</td>
+                <td>${item.precio}</td>
+            </tr>
+
+        
+        `) 
+        
+
+    }
+    
+}
+
+
+
+
+
+
