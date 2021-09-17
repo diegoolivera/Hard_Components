@@ -35,29 +35,34 @@ header{
 }
 
 .buscador{
-    position: relative;
+    position: absolute;
+    
 }
 
-.buscador input{
+#busqueda{
     outline: none;
     border: none;
     width: 250px;
     height: 30px;
     border-radius: 4px;
     padding-left: 10px;
-    position: relative;
-    left: 120px;
-
-}
-.buscador i{
     
-    display: inline-block;
+    position: absolute;
+    left: 370px;
+    top:-10px;
+    
+}
+
+
+.buscador i{
+    display: inline;
     padding: 4px;
     padding-bottom: 6px;
     color: rgb(6, 10, 17);
     position: absolute;
-    left: 345px;
-    top: 2px; 
+    left: 595px;
+    top: -6px; 
+    
     
 }
 
@@ -257,6 +262,9 @@ header{
 
 @media only screen and (max-width: 800px) {
    
+    body{
+        background-color: chartreuse;
+    }
 
     .header{
         width: 100%;
@@ -320,18 +328,76 @@ header{
         right: -8px;
     }
 
+    
+
+    .buscador{
+        position: absolute;
+        
+    }
+    
+    #busqueda{
+        outline: none;
+        border: none;
+        width: 250px;
+        height: 30px;
+        border-radius: 4px;
+        padding-left: 10px;
+        
+        position: absolute;
+        left: 280px;
+        top:-10px;
+        
+    }
+    
+    
+    .buscador i{
+        display: inline;
+        padding: 4px;
+        padding-bottom: 6px;
+        color: rgb(6, 10, 17);
+        position: absolute;
+        left: 508px;
+        top: -6px; 
+        
+        
+    }
+    
+
+
+
   }
 
 
 
 
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 750px) {
    
-
-
-    .buscador{
-        margin-top: 142px;
+    body{
+        background-color: red;
     }
+
+    
+   
+    
+    #busqueda{
+        width: 250px;
+        height: 30px;
+        position: absolute;
+        left: 250px;
+        top:54px;
+        
+    }
+    
+    
+    .buscador i{
+       
+        left: 475px;
+        top: 55px; 
+        
+        
+    }
+
+
 }
 
 
@@ -340,7 +406,9 @@ header{
 @media only screen and (max-width: 370px) {
     
    
-   
+   body{
+       background-color: #DCDCDC;
+   }
     
 
     .header{
@@ -371,20 +439,22 @@ header{
     
     }
 
-    .buscador{
-        margin-top: 0;
-        position: absolute;
-        top: 100px;
-        left: 20px;
+    #busqueda{
+        width: 150px;
+        height: 30px;
+        left: 150px;
+        top:54px;
+        
     }
-
-    .buscador i{
-        left: 91%;
+    
+    
+    #lupa{
+         
+        left: 275px;   
     }
-
-    .buscador input{
-        width: 156px;
-    }
+    
+    
+    
 
     .ordena{
         margin-left: 0;
@@ -405,12 +475,12 @@ header{
 @media only screen and (max-width: 580px) {
 
 
-    .buscador{
+    /* .buscador{
         margin-top: 0;
         position: absolute;
         top: 100px;
         left: 20px;
-    }
+    } */
 
     
 
