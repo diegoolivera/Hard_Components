@@ -142,12 +142,12 @@ const registrarVenta = ()=>{
     if(localStorage.getItem('ventas') === null){
         let ventas = []
       
-        ventas.push(new Date())
+        ventas.push(new Date());
         ventas.push(_nombre);
-        ventas.push(_apellido)
-        ventas.push(_direccion)
-        ventas.push(carritoEnLocal)
-        localStorage.setItem('ventas', JSON.stringify(ventas))
+        ventas.push(_apellido);
+        ventas.push(_direccion);
+        ventas.push(carritoEnLocal);
+        localStorage.setItem('ventas', JSON.stringify(ventas));
 
         Swal.fire({
             position: 'top-center',
@@ -155,18 +155,18 @@ const registrarVenta = ()=>{
             title: 'Se ha registrado la venta',
             showConfirmButton: false,
             timer: 1500
-          })
+          });
     }
     else{
 
-        ventas = localStorage.getItem('ventas');
+        ventasLocal = JSON.parse( localStorage.getItem('ventas'));
         
-        ventas.push(new Date())
-        ventas.push(_nombre);
-        ventas.push(_apellido)
-        ventas.push(_direccion)
-        ventas.push(carritoEnLocal)
-        localStorage.setItem('ventas', JSON.stringify(ventas))
+        ventasLocal.push(new Date())
+        ventasLocal.push(_nombre);
+        ventasLocal.push(_apellido)
+        ventasLocal.push(_direccion)
+        ventasLocal.push(carritoEnLocal)
+        localStorage.setItem('ventas', JSON.stringify(ventasLocal))
         Swal.fire({
             position: 'top-center',
             icon: 'success',
