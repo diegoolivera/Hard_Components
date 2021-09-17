@@ -31,7 +31,7 @@
 
                         <label class="contenedor"> Direccion</label>
                         <div class="contenedor" >
-                            <input type="text" placeholder="Calle y Numero" required>
+                            <input id="direccion" type="text" placeholder="Calle y Numero" required>
                         </div>
 
                         <label class="contenedor">Forma de Pago</label>
@@ -50,13 +50,39 @@
                         
                     </div>
                  </form>
+
+                 <article class="detalleCompra">
+                    <header class="headerDetalle">
+                        <h2>HC</h2>
+                        <div>
+                            <p id="id">id:0001</p>
+                            <p id="fecha"></p>
+                        </div>
+                    </header>
+                    <hr>
+                    <div class="datosPersona">
+                        <p>nombre y apellido</p>
+                        <p>domicilio</p>
+                    </div>
+                    <table>
+                        <tr>
+                          <th>nombre</th>
+                          <th>cantidad</th>
+                          <th>precio</th>
+                        </tr>
+                    </table>
+                    <p>total</p>    
+                 </article>
+
         </section>
     </main>
 
   
-
+    <!--sweetalert-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--js-->
     <script src="/js/carrito.js"></script>
     <script src="/js/pago.js"></script>
 </body>
