@@ -40,7 +40,7 @@ let productos = [
 ];
 
 
-localStorage.clear()
+localStorage.removeItem("seleccionados");
 
 
 

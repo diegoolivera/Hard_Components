@@ -96,16 +96,26 @@ body{
     align-items: center;
 }
 
+.tituloFactura{
+    display: inline;
+    margin-left: 190px;
+}
 .datosPersona{
-    margin-left: 10px;
+    margin-left: 15px;
+}
+.datosFactura{
+    margin-left: 90px;
 }
 
 #tabla{
     width: 100%;
+    text-align: center;
 }
-table, th, td {
+th{
     border:1px solid black;
     background-color: grey;
+    color: #f3f3f3;
+    
 }
 
 .contenedorTotal{

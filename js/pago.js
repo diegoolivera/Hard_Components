@@ -1,97 +1,109 @@
 
- let bandera = false;
- 
- $("#nombre").on("change",()=>{
+
+//valida los campos del formulario resaltando con color
+$("#nombre").on("change",()=>{
     
     if ($("#nombre").val().length == 0 ||isNaN($("#nombre").val())==false) {
+            
+            $("#nombre").css("background-color", "#f73f11")
         
-        $("#nombre").css("background-color", "#f73f11")
-        bandera = true;
     }
     else{
-        $("#nombre").css("background-color", "#fff");
-        bandera = false;
+            $("#nombre").css("background-color", "#fff");
+            
     }
 })
-
+    
 $("#apellido").on("change",()=>{
-
+    
     if ($("#apellido").val().length == 0 ||isNaN($("#apellido").val())==false) {
-        
+            
         $("#apellido").css("background-color", "#f73f11")
-        bandera = true;
+        
     }
     else{
         $("#apellido").css("background-color", "#fff");
-        bandera = false;
+            
     }
-    
-})
-
-
-$("#direccion").on("change",()=>{
-   
-    if ($("#direccion").val().length == 0 ||isNaN($("#direccion").val())==false) {
         
+})
+    
+    
+$("#direccion").on("change",()=>{
+        
+    if ($("#direccion").val().length == 0 ||isNaN($("#direccion").val())==false) {
+            
         $("#direccion").css("background-color", "#f73f11")
-        bandera = true;
+        
     }
     else{
         $("#direccion").css("background-color", "#fff");
-        bandera = false;
-    }
+            
+        }
 })
 
+ 
+ 
 
 
+const principal = ()=>{
 
-$(".comprar").on("click",(e)=>{
-    e.preventDefault();
-
-    let nombre = $("#nombre").val().length;
-    let apellido = $("#apellido").val().length;
-    let direccion = $("#direccion").val().length;
-
-    if (nombre == 0 || apellido == 0 || direccion ==0) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'FALTA COMPLETAR LOS CAMPOS',
-          })  
-    } 
-    else {
-        
-        $(".formulario").css("display","none")
-        $(".detalleCompra").css("display","block")
-        
-        setFecha();
-        setDatosCliente();
-        mostrarDetalleCompra();
-        registrarVenta()
-
-
-    }
-
+    //evento al boton comprar del carrito
+    $(".comprar").on("click",(e)=>{
     
-})
+        e.preventDefault();
+        
+    
+        let nombre = $("#nombre").val().length;
+        let apellido = $("#apellido").val().length;
+        let direccion = $("#direccion").val().length;
+    
+        //valida el formulario
+        if ((nombre == 0 || apellido == 0 || direccion ==0)||(isNaN($("#nombre").val())==false)||(isNaN($("#apellido").val())==false)||(isNaN($("#direccion").val())==false)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'FALTA COMPLETAR LOS CAMPOS',
+              })  
+        }
+        //validaciones correctas del formulario entra aca 
+        else {
+            
+            $(".formulario").css("display","none")
+            $(".detalleCompra").css("display","block")
+            
+            
+            setFecha();
+            setDatosCliente();
+            mostrarDetalleCompra();
+            registrarVenta()
+            
+        }
+    
+        
+    })
+    
+    
+    //agregamos la fecha al detalle
+    
+    const setFecha = ()=>{
+    
+        let fecha = new Date();
+    
+        let dia = fecha.getDate();
+        let mes = fecha.getMonth()+1;
+        let anio = fecha.getFullYear()
+    
+        $("#fecha").text(`Fecha Compra:${dia}/${mes}/${anio}`)
+    }
 
-
-//agregamos la fecha al detalle
-
-const setFecha = ()=>{
-
-    let fecha = new Date();
-
-    let dia = fecha.getDate();
-    let mes = fecha.getMonth()+1;
-    let anio = fecha.getFullYear()
-
-    $("#fecha").text(`Fecha Compra:${dia}/${mes}/${anio}`)
 }
 
 
 
-//agregamos al detalle nombres y direccion
+
+
+//agregamos al detalle nombres y direccion al detalle
 
 const setDatosCliente=()=>{
     let _nombre = $("#nombre").val();
@@ -105,7 +117,7 @@ const setDatosCliente=()=>{
 
 
 
-
+//mustra los productos en el detalle
 const mostrarDetalleCompra = ()=>{
 
     
@@ -121,7 +133,7 @@ const mostrarDetalleCompra = ()=>{
             <tr>
                 <td>${item.nombre}</td>
                 <td>${cantidad}</td>
-                <td>${item.precio}</td>
+                <td>${`$${item.precio}`}</td>
             </tr>
 
         
@@ -133,12 +145,13 @@ const mostrarDetalleCompra = ()=>{
 }
 
 
+//registra la venta en localStorage
 const registrarVenta = ()=>{
 
     let _nombre = $("#nombre").val();
     let _apellido =$("#apellido").val();
     let _direccion = $("#direccion").val();
-
+    
     if(localStorage.getItem('ventas') === null){
         let ventas = []
       
@@ -157,6 +170,7 @@ const registrarVenta = ()=>{
             timer: 1500
           });
     }
+    
     else{
 
         ventasLocal = JSON.parse( localStorage.getItem('ventas'));
@@ -174,8 +188,21 @@ const registrarVenta = ()=>{
             showConfirmButton: false,
             timer: 1500
           })
+     
+
+        
+        
     }
+
+    
+    localStorage.removeItem("seleccionados");
 }
 
 
 
+
+//inicio programa
+
+$( document ).ready(function() {
+    principal()
+});
