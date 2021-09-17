@@ -63,10 +63,11 @@ $(".comprar").on("click",(e)=>{
         
         $(".formulario").css("display","none")
         $(".detalleCompra").css("display","block")
+        
         setFecha();
         setDatosCliente();
         mostrarDetalleCompra();
-
+        registrarVenta()
 
 
     }
@@ -132,7 +133,49 @@ const mostrarDetalleCompra = ()=>{
 }
 
 
+const registrarVenta = ()=>{
 
+    let _nombre = $("#nombre").val();
+    let _apellido =$("#apellido").val();
+    let _direccion = $("#direccion").val();
+
+    if(localStorage.getItem('ventas') === null){
+        let ventas = []
+      
+        ventas.push(new Date())
+        ventas.push(_nombre);
+        ventas.push(_apellido)
+        ventas.push(_direccion)
+        ventas.push(carritoEnLocal)
+        localStorage.setItem('ventas', JSON.stringify(ventas))
+
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Se ha registrado la venta',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+    else{
+
+        ventas = localStorage.getItem('ventas');
+        
+        ventas.push(new Date())
+        ventas.push(_nombre);
+        ventas.push(_apellido)
+        ventas.push(_direccion)
+        ventas.push(carritoEnLocal)
+        localStorage.setItem('ventas', JSON.stringify(ventas))
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Se ha registrado la venta',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+}
 
 
 
