@@ -126,13 +126,14 @@ header{
     justify-content:space-evenly;
     align-items:center;
     height: 100%;
-    
+        
 }
 
 .listaProductos li a{
     text-decoration: none;
     font-size: 18px;
     color: #DCDCDC;
+    
 }
 
 .listaProductos a:hover{
@@ -281,297 +282,147 @@ header{
     color: #61c9f7;
 }
 
-/*responsive*/
+/*-----------------------------responsive--------------------*/
 
-@media only screen and (max-width: 800px) {
-   
-    .logo{
-        font-size: 20px;
-    }
 
-    .navegacion ul li{
-        font-size: 18px;
-    }
 
-    .logoCarrito{
-        width: 25px;
-    }
 
-    
-    .listaProductos {
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        display: none;
-        background-color: #187f99;
-        font-size: 40px;
-        z-index: 30;
-    }
+@media only screen and (max-width:450px){
 
-    .botonAbrirMenu{
-        display: block;
-    }
-    .cerrarMenu{
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 40px;
-        color: #DCDCDC;
-        cursor: pointer;
-    }
-
-    #seccionArticulos{
-       
-        grid-template-columns: repeat(2,1fr);
-    
-    }
-
-    .ordena{
-        align-items: center;
-    }
-
-    .cantProducto{
-        right: -8px;
-    }
-
-    
-
-    .buscador{
-        position: absolute;
         
-    }
+        .logo{
+            font-size: 20px;
+        }
     
-    #busqueda{
-        outline: none;
-        border: none;
-        width: 250px;
-        height: 30px;
-        border-radius: 4px;
-        padding-left: 10px;
+        .navegacion ul li{
+            font-size: 18px;
+        }
+    
+        .logoCarrito{
+            width: 25px;
+        }
+
+        .contenedorLogo{
+            display: none;
+        }
+    
+        .contenedorLogoAux{
+            display: inline-block;
+        }
+
+        .contenedorLogoAux h1{
+            font-size: 25px;
+        }
+    
         
-        position: absolute;
-        left: 280px;
-        top:-10px;
+        .listaProductos {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            background-color: #151515;
+            font-size: 40px;
+            z-index: 30;
+        }
+    
+        .botonAbrirMenu{
+            display: block;
+        }
+        .cerrarMenu{
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: #DCDCDC;
+            cursor: pointer;
+        }
+    
+        #seccionArticulos{
+           
+            grid-template-columns: 1fr;
         
-    }
+        }
     
+        .ordena{
+            align-items: center;
+        }
     
-    .buscador i{
-        display: inline;
-        padding: 4px;
-        padding-bottom: 6px;
-        color: rgb(6, 10, 17);
-        position: absolute;
-        left: 508px;
-        top: -8px; 
+        .cantProducto{
+            right: -8px;
+        }
+    
+        
+    
+
+        
+        #busqueda{
+            width: 150px;
+            height: 30px;
+            left: 150px;
+            top:54px;
+            
+        }
         
         
-    }
-    .cantProducto{
-        font-size: 15px;
-        top: -11px;
-        right: -10px;
-    }
-    
-
-
-
-  }
-
-
-
-
-@media only screen and (max-width: 750px) {
-   
-    body{
-        background-color: red;
-    }
-
-    
-   
-    
-    #busqueda{
-        width: 250px;
-        height: 30px;
-        position: absolute;
-        left: 250px;
-        top:54px;
+        #lupa{
+            position: absolute;
+            top: 55px;
+            left: 275px;   
+        }
+        .cantProducto{
+            font-size: 15px;
+            top: -11px;
+            right: -10px;
+        }
         
-    }
+        .pagos img{
+            width: 120px;
+        }
     
     
-    .buscador i{
-       
-        left: 475px;
-        top: 55px; 
-        
-        
-    }
-
-
 }
 
 
 
 
-@media only screen and (max-width: 370px) {
-    
+@media only screen and (max-width:280px){
+
    
-   body{
-       background-color: #DCDCDC;
-   }
-    
-
-    .header{
-        width: 100%;
-
-    }
-
-    .navegacion ul{
-        margin-right: 10px;
-        
-    }
-
-    .contenedorLogo{
-        display: none;
-    }
-
-    .contenedorLogoAux{
-        display: inline-block;
-    }
-    .contenedorLogoAux h1{
-        font-size: 25px;
-    }
-
-
-    #seccionArticulos{
-       
-        grid-template-columns: 1fr;
-    
-    }
-
     #busqueda{
-        width: 150px;
+       
+        width: 120px;
         height: 30px;
-        left: 150px;
+        left: 140px;
         top:54px;
         
     }
     
     
     #lupa{
-         
-        left: 275px;   
-    }
-    
-    
-    
-
-    .ordena{
-        margin-left: 0;
-        margin-top: 25px;
-        text-align: center;
-    }
-
-
-    
-
-
-
-}
-
-
-
-
-@media only screen and (max-width: 580px) {
-
-
-    /* .buscador{
-        margin-top: 0;
         position: absolute;
-        top: 100px;
-        left: 20px;
-    } */
-
-    
-
-    .navegacion ul{
-        margin-right: 15px;
-        
-    }
-
-
-    #seccionArticulos{
-       
-        grid-template-columns: 1fr;
-    
-    }
-}
-
-
-@media only screen and (max-width: 580px){
-    
-
-
-    .pagos img{
-        width: 150px;
-    }
-}
-
-@media only screen and (max-width: 375px){
-    
-   
-
-    .contenedorLogo{
-        display: none;
-    }
-
-    .contenedorLogoAux{
-        display: inline-block; 
-    }
-
-    .logo h1{
-        font-size: 21px;
-    }
-
-
-    .buscador input{
-        width: 170px;
-    }
-
-    .buscador i{
-        left: 90%;
+        top: 55px;
+        left: 235px;   
     }
 
     .pagos img{
-        width: 120px;
-    }
-
-
-}
-
-@media only screen and (max-width: 280px){
-
-    .logo h1{
-        font-size: 21px;
-    }
-    .buscador input{
         width: 100px;
     }
 
-    .pagos img{
-        width: 120px;
+    .redes{
+        margin-left: 5px;
+       
     }
-
-    .redes li{
-        font-size: 30px;
-    }
-
     
+    .redes li{
+        font-size: 25px;
+    }
+
+
 }
+
