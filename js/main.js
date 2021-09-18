@@ -198,10 +198,10 @@ const mostrarProductos = (productos)=>{
                 <img class="imagenCard" src=${i.imagen} alt="imagenProducto">
                 <hr class="linea">
                 <div class="contenedorDescripcion">
-                    <p> ${i.nombre}</p>
-                    <p> $${i.precio}</p>
+                    <p class="nombreCard"> ${i.nombre}</p>
+                    <p class="precioCard"> $${i.precio}</p>
                 </div>
-                <button class="botonCard" id="btn${i.id}">Agregar</button>
+                <button class="botonCard" id="btn${i.id}">Agregar Carrito</button>
 
             </div>
 

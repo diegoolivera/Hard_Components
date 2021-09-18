@@ -6,24 +6,26 @@
 }
 
 body{
-    /*background-color: #222222;*/
-    background-color: #21242a;
+    background-color: #61c9f7;
+    
     
 }
 
 header{
-    background-color: #151515;
+    background-color: #303030;
     height: 90px;
     display: flex;
     justify-content:space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo{
     width: 20px;
     display: inline-block;
     text-decoration: none;
-    font-family: 'Gilda Display', serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
     font-size: 20px;
     color: rgb(250, 253, 255);
     margin-left: 15px;
@@ -62,10 +64,13 @@ header{
     position: absolute;
     left: 595px;
     top: -6px; 
-    
+    cursor: pointer;
     
 }
 
+.buscador i:hover{
+    color: #53b3ff;
+}
 
 
 .navegacion ul{
@@ -77,14 +82,14 @@ header{
 .navegacion ul li {
     margin-right: 10px;
     text-decoration: none;
-    font-family: 'Gilda Display', serif;
+    font-family: 'Average Sans', sans-serif;
     font-size: 20px;
     
     
 }
 .navegacion ul li a{
     text-decoration: none;
-    color: rgb(199, 220, 233);
+    color: #F7F9F8;
 }
 
 .logoCarrito{
@@ -95,9 +100,11 @@ header{
 }
 .cantProducto{
     position: relative;
-    top: 0;
-    right: -12px;
-    color: #17df17;
+    top: -10px;
+    right: -11px;
+    color: #f6f6f6;
+    border-radius: 50%;
+    font-size: 17px;
     
 }
 
@@ -105,10 +112,12 @@ header{
 
 
 .barraProductos{
-    background-color: #151515;
+    background-color: #303030;
     width: 100%;
     height: 50px;
     border-top: solid 0.1px rgb(129, 178, 219);
+    font-family: 'Average Sans', sans-serif;
+    font-size: 15px;
 }
 
 .listaProductos{
@@ -127,7 +136,7 @@ header{
 }
 
 .listaProductos a:hover{
-    color: #87a4d6;
+    color: rgb(129, 178, 219);
 }
 
 .botonAbrirMenu{
@@ -164,7 +173,7 @@ header{
 
 .combo{
     padding: 10px 20px;
-    background-color: #587ebe;
+    background-color: #53b3ff;
     color: aliceblue;
     font-size: 17px;
     border-style: none;
@@ -182,7 +191,7 @@ header{
 
 
 .card{
-    background-color: #DCDCDC;
+    background-color: #363636;
     width: 250px;
     height: 350px;
     border-radius: 8px;
@@ -198,20 +207,34 @@ header{
 
 .card .contenedorDescripcion{
     margin: 5px 20px;
+    color: #F7F9F8;
+    
+}
+
+.contenedorDescripcion .precioCard{
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.contenedorDescripcion .nombreCard{
+    font-size: 20px;
 }
 
 .botonCard{
-    margin: 20px 10px 10px 60px;
-    padding: 15px 30px;
+    margin-top: 27px;
+    margin-left: 25px;
+    padding: 5px 30px;
     border-radius: 5px;
-    background-color: #078f07;
+    background-color: #53b3ff;
     color: #DCDCDC;
     font-size: 20px;
+    border-style: none;
+    cursor: pointer;
     
 }
 
 .linea{
-    border-color: white
+    border-color: rgb(143, 187, 238)
 }
 
 
