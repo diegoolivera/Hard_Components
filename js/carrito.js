@@ -3,10 +3,6 @@ let carritoEnLocal =JSON.parse(localStorage.getItem('seleccionados'));
 
 //funciones
 
-
-
-
-
 //borra un articulo
 const borrador=()=>{
     $(".contenedor").remove();
@@ -128,6 +124,8 @@ $( document ).ready(function() {
             text: 'No Hay Articulos Seleccionados',
             
           })
+        
+        //le agregamos una clase al boton para desabilitarlo
         $("#botonDetalle").addClass('desabilitar')
     }
     
