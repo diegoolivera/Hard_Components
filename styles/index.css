@@ -141,7 +141,7 @@ header{
 
 .botonAbrirMenu{
     padding: 10px 20px;
-    background-color: #187f99;
+    background-color: #61c9f7;
     color: #DCDCDC;
     border-style: none;
     border-radius: 5px;
@@ -278,34 +278,23 @@ header{
 }
 
 .redes li a:hover{
-    color: #587ebe;
+    color: #61c9f7;
 }
 
 /*responsive*/
 
 @media only screen and (max-width: 800px) {
    
-    body{
-        background-color: chartreuse;
-    }
-
-    .header{
-        width: 100%;
-    }
-
     .logo{
         font-size: 20px;
     }
 
-
-    
-
     .navegacion ul li{
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .logoCarrito{
-        width: 20px;
+        width: 25px;
     }
 
     
@@ -380,9 +369,14 @@ header{
         color: rgb(6, 10, 17);
         position: absolute;
         left: 508px;
-        top: -6px; 
+        top: -8px; 
         
         
+    }
+    .cantProducto{
+        font-size: 15px;
+        top: -11px;
+        right: -10px;
     }
     
 
