@@ -1,37 +1,51 @@
 body{
-    background-color: #242424;
+    background-color:#61c9f7;
 }
 
-
-/*header*/
 *{
     margin: 0;
     padding: 0;
     box-sizing:border-box;
 }
 
-body{
-    background-color: #222222;
-}
+
+
+
+/*header*/
 
 header{
-    background-color: #151515;
+    
+    background-color: #303030;
     height: 90px;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
+    width: 100%;
+
+}
+
+.contenedorLogoAux{
+    display: none;
 }
 
 .logo{
+    
     width: 20px;
     display: inline-block;
     text-decoration: none;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
     font-size: 20px;
     color: rgb(250, 253, 255);
     margin-left: 15px;
     
 }
+
+.desabilitar{
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+  }
 
 .buscador input{
     padding: 5px 5px;
@@ -39,6 +53,7 @@ header{
     outline: none;
     border: none;
 }
+
 
 
 .navegacion ul{
@@ -50,14 +65,14 @@ header{
 .navegacion ul li {
     margin-right: 10px;
     text-decoration: none;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Average Sans', sans-serif;
     font-size: 20px;
     
     
 }
 .navegacion ul li a{
     text-decoration: none;
-    color: rgb(163, 190, 207);
+    color: #F7F9F8;
 }
 
 
@@ -74,26 +89,44 @@ header{
 
 .logoCarrito{
     font-size: 90px;
-    color: rgb(161, 192, 219);
+    color: #303030;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
 }
+
+.imagenCard{
+    width: 100px;
+}
+
+
 .flex{
     display: flex;
     align-items:center;
-    justify-content:space-around;
-    border: solid 2px white;
-    background-color: aliceblue;
+    justify-content:space-evenly;
+    background-color: #edf5f8;
     box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 4px;
     font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+    
     
 }
 
+.flex i{
+    color: #bd1515;
+}
+
 #listaProductos{
-    margin-bottom: 20px;
+
+   margin-bottom: 20px;
+   height: 300px;
+   overflow-y:auto;
+   margin-left: 10px;
+   margin-right: 10px;
+   
 }
 .contenedor{
     margin-top: 10px;
@@ -105,9 +138,15 @@ header{
     padding: 10px;
 }
 
+#total{
+    font-weight:800;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
 /*detalle de compra*/
 .detalleCompra{
-    background-color: aliceblue;
+    background-color: #61c9f7;
     display: flex;
     justify-content:flex-end;
     align-items: center;
@@ -121,7 +160,27 @@ header{
 .botonDetalle{
     text-decoration: none;
     padding: 10px 20px;
-    background-color: #0b700b;
+    background-color: #4CAF50;
     color: #ffffff;
     margin: 20px;
+    border-radius: 3px;
+}
+
+
+
+/*responsive*/
+
+@media only screen and (max-width:450px){
+
+    .contenedorLogo{
+        display: none;
+    }
+
+    .contenedorLogoAux{
+        display: inline-block;
+    }
+
+    .contenedorLogoAux h1{
+        font-size: 25px;
+    }
 }

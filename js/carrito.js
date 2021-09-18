@@ -3,6 +3,10 @@ let carritoEnLocal =JSON.parse(localStorage.getItem('seleccionados'));
 
 //funciones
 
+
+
+
+
 //borra un articulo
 const borrador=()=>{
     $(".contenedor").remove();
@@ -13,24 +17,39 @@ const borrador=()=>{
 const borrarItem = (botonEliminar,i)=>{
 
     botonEliminar.click(()=>{
+
+
+        Swal.fire({
+            title: 'Confirmar el Borrado',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Borrar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                //cuando confirma se ejecuta el borrado
+                if (carritoEnLocal=== null) {
+                    return;
+                }
         
-        if (carritoEnLocal=== null) {
-            return;
-        }
-
-        if (carritoEnLocal.length === 1) {
-
-            borrador()
-            localStorage.clear();
-            $("#total").text("Total:0")
-            return;
-        }
-        borrador()
-
-        carritoEnLocal.splice(i, 1);
-        localStorage.setItem("seleccionados", JSON.stringify(carritoEnLocal));
+                if (carritoEnLocal.length === 1) {
         
-        mostrarCarrito()
+                    borrador()
+                    localStorage.clear();
+                    $("#total").text("Total:0")
+                    return;
+                }
+                borrador()
+        
+                carritoEnLocal.splice(i, 1);
+                localStorage.setItem("seleccionados", JSON.stringify(carritoEnLocal));
+                
+                mostrarCarrito()
+            }
+          })
+        
+        
 
         
 
@@ -57,16 +76,18 @@ const mostrarCarrito = ()=>{
         $("#listaProductos").append(`
     
         <article class="contenedor">
-                    <div class="flex">
-                        <img class="imagenCard" src=${item.imagen} >
-                        <p> ${item.nombre}</p>
-                        <p> $${item.precio}</p>
-                        <p id="cant">${cantidad}</p>
-                        <button id="btn${i}"> borrar</button>
-    
-                    </div>
-        
+            <div class="flex">
+                <img class="imagenCard" src=${item.imagen} >
+                <p> ${item.nombre}</p>
+                <p> $${item.precio}</p>
+                <p id="cant">${cantidad}</p>
+                <i id="btn${i}" class="fas fa-times-circle"></i>
+
+            </div>
+
         </article>
+        
+        
         
         `) 
         
@@ -82,6 +103,7 @@ const mostrarCarrito = ()=>{
        
     }
     
+    //agrega el precio total de articulos al html 
     $("#total").text(`Total:$${total}`)
     $(".totalPagar").text(`$${total}`)
     $(".total").text(`Total:$${total}`)
@@ -95,7 +117,22 @@ const mostrarCarrito = ()=>{
 
 $( document ).ready(function() {
     
-    mostrarCarrito()
+    if (carritoEnLocal != null) {
+        mostrarCarrito()
+    }
+    else{
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No Hay Articulos Seleccionados',
+            
+          })
+        $("#botonDetalle").addClass('desabilitar')
+    }
+    
 
 
 });
+
+
