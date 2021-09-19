@@ -202,7 +202,22 @@ const buscarProducto = (productos)=>{
         }
         else{
             let item = productos.find(i => i.nombre == itemNombre)
-            prod.push(item)
+            
+            if (item != null) {
+                prod.push(item)
+            }
+
+            else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'NO SE ENCONTRO EL PRODUCTO',
+                    
+                  })
+
+                mostrarProductos(productos)
+            }
+           
         }
         
         
