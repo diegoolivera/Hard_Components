@@ -148,6 +148,11 @@ th{
     color: #f3f3f3;
 }
 
+                   
+.pedido{
+    color: #9b4e4e;
+}
+
 /*responsive*/
 
 @media only screen and (max-width:450px){
