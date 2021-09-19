@@ -48,6 +48,12 @@ body{
     padding: 3px;
     
 }
+
+.tituloFormaPago{
+    font-size: 18px;
+    
+   
+}
 .formaPago{
     padding: 7px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -82,10 +88,8 @@ body{
 
 .detalleCompra{
     display: none;
-    margin-top: 50px;
     background-color: rgb(255, 255, 255);
-    width: 800px;
-    height: 500px;
+    height: 550px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -94,6 +98,8 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .tituloFactura{
@@ -107,9 +113,14 @@ body{
     margin-left: 90px;
 }
 
+.contenedorTabla{
+    height: 55%;
+}
+
 #tabla{
     width: 100%;
     text-align: center;
+    
 }
 th{
     border:1px solid black;
@@ -122,11 +133,84 @@ th{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+ 
+}
 
-    
+.contenedorTotal .total{
+    font-weight: 600;
 }
 
 .volverLocal{
     background-color: #008ecc;
     color: #f3f3f3;
+}
+
+/*responsive*/
+
+@media only screen and (max-width:450px){
+
+    #tabla{
+        width: 100%;
+        text-align: center;
+        
+    }
+    .detalleCompra{
+        height: 100vh;
+        width: 100%;
+        
+        
+
+    }
+
+    #fecha{
+        margin-right: 210px;
+    }
+}
+
+@media only screen and (max-width:280px){
+
+    /*formulario*/
+
+    .tituloFormaPago{
+        font-size: 13px;
+    }
+
+    .contenedor{
+        margin: 5px 20%;
+        font-size: 20px;
+    }
+
+    .btn{
+
+        padding: 5px 10px;
+        font-size: 11px;
+        
+    } 
+
+    
+   
+
+
+    /*detalle compra*/
+    .cabecera{
+        display: flex;
+        flex-direction: column;
+    }
+    .tituloFactura{
+        font-size: 15px; 
+    }
+    
+    .volverLocal{
+        font-size: 15px;
+    }
+    
+    .contenedorTotal .total{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    
+
+
 }

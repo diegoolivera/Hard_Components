@@ -34,7 +34,7 @@
                             <input id="direccion" type="text" placeholder="Calle y Numero" required>
                         </div>
 
-                        <label class="contenedor">Forma de Pago</label>
+                        <label class="contenedor tituloFormaPago">Forma de Pago</label>
                         <div class="contenedor">
                             <select class="formaPago">
                                 <option value="efectivo">Efectivo</option>
@@ -54,9 +54,11 @@
                  <article class="detalleCompra">
                     <header class="headerDetalle">
                         <h2>HC</h2>
-                        <p class="tituloFactura">FACTURA</p>
-                        <div class="datosFactura">
-                            <p id="fecha"></p>
+                        <div class="cabecera">
+                            <p class="tituloFactura">FACTURA</p>
+                            <div class="datosFactura">
+                                <p id="fecha"></p>
+                            </div>
                         </div>
                     </header>
                     <hr>
@@ -64,13 +66,16 @@
                         <p class="nomApe"></p>
                         <p class="domicilio"></p>
                     </div>
-                    <table id="tabla">
-                        <tr>
-                          <th>nombre</th>
-                          <th>cantidad</th>
-                          <th>precio</th>
-                        </tr>
-                    </table>
+                    <div class="contenedorTabla">
+                        <table id="tabla">
+                            <tr>
+                                <th>nombre</th>
+                                <th>cantidad</th>
+                                <th>precio</th>
+                            </tr>
+                        </table>
+                    </div>
+                    
                     <div class="contenedorTotal">
                         <a class="btn volverLocal" href="/">Volver al Local</a>
                         <p class="total"></p> 
