@@ -43,6 +43,12 @@ let productos = [
 localStorage.removeItem("seleccionados");
 
 
+//validar busqueda articulo
+
+/* <input  type="text"  id="busqueda">
+            <i id="lupa" class="fas fa-search"></i> */
+
+
 
 
 
@@ -245,8 +251,21 @@ const buscarProducto = (productos)=>{
         let prod = []
         borrarProducto()
         let itemNombre =$("#busqueda").val();
-        let item = productos.find(i => i.nombre == itemNombre)
-        prod.push(item)
+
+        //valida que ingrese algun articulo
+        if (itemNombre.length == 0) {
+            Swal.fire({
+                icon: 'error',
+                text: 'NO ingreso ningun Articulo',
+                
+              })
+              mostrarProductos(productos)
+        }
+        else{
+            let item = productos.find(i => i.nombre == itemNombre)
+            prod.push(item)
+        }
+        
         
         
         mostrarProductos(prod)
