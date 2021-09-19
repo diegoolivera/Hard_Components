@@ -1,4 +1,4 @@
-const url = "https://parallelum.com.br/fipe/api/v1/carros/marcas";
+const url = "/flota.json";
 
 $.get(url,(respuesta,estado)=>{
 
@@ -12,7 +12,9 @@ $.get(url,(respuesta,estado)=>{
                 `
                     <article class="card">
                        
-                        <p class="card__nombre">${auto.nome}</p>
+                        <img class="card__imagen" src=${auto.imagen} alt="imagenCamioneta">
+                        <p class="card__carga">${auto.carga}</p>
+                        <p class="card__velocidad">${auto.velocidad}</p>
                         
                     </article>
                 `
