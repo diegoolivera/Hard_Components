@@ -58,76 +58,19 @@ const categorias = ["Todo","Netbooks","Perifericos","Placas Video","Procesadores
 
 const filtrado = (f)=>{
 
-    
-
-    if (f == "Todo") {
+    switch (f) {
+        case "Todo": 
         borrarProducto(productos)
         mostrarProductos(productos)
-    }
-    else if (f=="Netbooks") {
+        break;
 
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-        
-    }
-    else if (f=="Perifericos") {
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-    }
-    else if (f=="Placas Video") {
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-        
-    }
-    else if (f=="Procesadores") {
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-        
-        
-    }
-    else if (f=="Mothers") {
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-        
-    }
-    else if (f=="Ventilacion") {
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-        
-    }
-    else if (f=="Fuentes") {
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-        
-        
-    }
-    else if (f=="Almacenamiento") {
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-        
-    }
-    else if (f=="Gabinetes") {
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-        
-    }
-    else if (f=="Accesorios") {
-        borrarProducto(productos)
-        let aux = productos.filter(i => i.tipo == f)
-        mostrarProductos(aux)
-        
-    }
+        default:
+            borrarProducto(productos)
+            let aux = productos.filter(i => i.tipo == f)
+            mostrarProductos(aux)
+            break;
 
-    
+        }    
 }
 
 const generarCategorias = ()=>{
