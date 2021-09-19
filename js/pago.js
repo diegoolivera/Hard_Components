@@ -201,8 +201,9 @@ const registrarVenta = ()=>{
 
 
 
-//inicio programa
+
 
 $( document ).ready(function() {
+    //cuando todo este ready llamamos a principal que llama a las demas funciones
     principal()
 });
