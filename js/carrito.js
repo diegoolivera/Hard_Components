@@ -74,8 +74,8 @@ const mostrarCarrito = ()=>{
         <article class="contenedor">
             <div class="flex">
                 <img class="imagenCard" src=${item.imagen} >
-                <p> ${item.nombre}</p>
-                <p> $${item.precio}</p>
+                <p class="nombreItem"> ${item.nombre}</p>
+                <p class="precioItem"> $${item.precio}</p>
                 <p id="cant">${cantidad}</p>
                 <i id="btn${i}" class="fas fa-times-circle"></i>
 

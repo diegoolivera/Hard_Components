@@ -83,13 +83,14 @@ body{
 }
 .comprar{
     background-color: #008ecc;
-    color: white;
+    color: #ffffff;
 }
 
 .detalleCompra{
     display: none;
     background-color: rgb(255, 255, 255);
     height: 550px;
+    width: 50%;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }

@@ -184,3 +184,22 @@ header{
         font-size: 25px;
     }
 }
+
+@media only screen and (max-width:280px){
+
+    .imagenCard{
+        width: 80px;
+    }
+
+    .nombreItem{
+        font-size: 15px;
+    }
+
+    .precioItem{
+        font-size: 15px;
+    }
+
+    cant{
+        font-size: 15px;
+    }
+}
