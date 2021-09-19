@@ -28,7 +28,7 @@ let productos = [
     {id:24,nombre:"articulo24",precio:2000,imagen:"/img/articulos/pad3.jpg",tipo:"Accesorios"},
     {id:25,nombre:"articulo25",precio:1500,imagen:"/img/articulos/pastaTermica.jpg",tipo:"Accesorios"},
     {id:26,nombre:"articulo26",precio:50000,imagen:"/img/articulos/placaVideo.jpg",tipo:"Placas Video"},
-    {id:27,nombre:"articulo27",precio:400000,imagen:"/img/articulos/placavideo2.jpg",tipo:"Placas Video"},
+    {id:27,nombre:"articulo27",precio:400000,imagen:"/img/articulos/placaVideo2.jpg",tipo:"Placas Video"},
     {id:28,nombre:"articulo28",precio:3000,imagen:"/img/articulos/ram.jpg",tipo:"Almacenamiento"},
     {id:29,nombre:"articulo29",precio:53000,imagen:"/img/articulos/ryzen7.jpg",tipo:"Procesadores"},
     {id:30,nombre:"articulo30",precio:3400,imagen:"/img/articulos/teclado4.jpg",tipo:"Perifericos"},
