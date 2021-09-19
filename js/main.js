@@ -39,23 +39,12 @@ let productos = [
 
 ];
 
-
+//borra el local storage de "carrito"
 localStorage.removeItem("seleccionados");
 
 
-//validar busqueda articulo
 
-/* <input  type="text"  id="busqueda">
-            <i id="lupa" class="fas fa-search"></i> */
-
-
-
-
-
-//agregar categorias
-
-const categorias = ["Todo","Netbooks","Perifericos","Placas Video","Procesadores","Mothers","Ventilacion","Fuentes","Almacenamiento","Gabinetes","Accesorios"]
-
+//funcionalidad de filtro
 const filtrado = (f)=>{
 
     switch (f) {
@@ -73,8 +62,9 @@ const filtrado = (f)=>{
         }    
 }
 
+//agrega los filtros al html
 const generarCategorias = ()=>{
-
+    const categorias = ["Todo","Netbooks","Perifericos","Placas Video","Procesadores","Mothers","Ventilacion","Fuentes","Almacenamiento","Gabinetes","Accesorios"]
     for (let i= 0; i < categorias.length; i++) {
         $(".listaProductos").append(`<li><a href="#" id="item${i}">${categorias[i]}</a></li>`);
         $(`#item${i}`).on("click",()=>{
@@ -88,8 +78,8 @@ const generarCategorias = ()=>{
 
 
 
-
-const agregarProdcuto = (i)=>{
+//agregar productos a localStorage
+const agregarProducto = (i)=>{
     Swal.fire({
         position: 'top-center',
         icon: 'success',
@@ -98,6 +88,7 @@ const agregarProdcuto = (i)=>{
         timer: 1000
     })
 
+    //agrega el producto y un valor para contar cantidad
     let itemAgregar = [i,1]
 
     if(localStorage.getItem('seleccionados') === null){
@@ -132,7 +123,7 @@ const agregarProdcuto = (i)=>{
    
 }
 
-
+//muestra los productos
 const mostrarProductos = (productos)=>{
 
     //acumulador para contar productos de carrito
@@ -169,10 +160,13 @@ const mostrarProductos = (productos)=>{
        //evento para el boton
        
         $(`#btn${i.id}`).on("click",function(){
+            //suma 1 cada vez que agrega al carrito
             cantidad ++;
             let seleccion = i;
+            //agrega la cantidad de articulos seleccionados al html
             $(".cantProducto").text(`${cantidad}`)
-            agregarProdcuto(seleccion)
+            //llama a agregar prodcuto y le pasa el articulo
+            agregarProducto(seleccion)
   
         })
             
@@ -181,17 +175,19 @@ const mostrarProductos = (productos)=>{
 }
 
 
-
+//borra un articulo
 const borrarProducto = ()=>{
     $(".contenedor").remove()
     
 }
 
+//buscar producto
 const buscarProducto = (productos)=>{
     
     
     $("#lupa").on("click",()=>{
         let prod = []
+        //limpia los anteriores articulos
         borrarProducto()
         let itemNombre =$("#busqueda").val();
 
@@ -239,6 +235,7 @@ const ordenar = ()=>{
         })
     }
     
+    //borra los anteriores articulos
     borrarProducto()
     mostrarProductos(productos)
 
@@ -254,8 +251,7 @@ $( document ).ready(function() {
     generarCategorias()
     mostrarProductos(productos)
     buscarProducto(productos)
-    
-
+    //evento para ordenar
     $("#comboSeleccion").on("change",ordenar);  
     
 
