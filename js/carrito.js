@@ -12,6 +12,7 @@ const borrador=()=>{
 //borra articulos del carrito
 const borrarItem = (botonEliminar,i)=>{
 
+    //al boton recibido le agregamos un evento
     botonEliminar.click(()=>{
 
 
@@ -88,22 +89,24 @@ const mostrarCarrito = ()=>{
         `) 
         
         
-        
+        // acumula y multiplica precio por cantidad por cada vuelta del for
         total += item.precio*cantidad
         
         const botonEliminar = $(`#btn${i}`);
         
-    
+        // ala funcion borrar le pasamos el boton y el articulo
         borrarItem(botonEliminar,i);
 
        
     }
     
-    //agrega el precio total de articulos al html 
+    //agrega el precio total de articulos al carrito
     $("#total").text(`Total:$${total}`)
+    // ""  al formulario de pago
     $(".totalPagar").text(`$${total}`)
+    // "" al detalle de compra
     $(".total").text(`Total:$${total}`)
-    
+    s
     
     
 }
@@ -113,6 +116,7 @@ const mostrarCarrito = ()=>{
 
 $( document ).ready(function() {
     
+    //si el carrito no esta vacio mostramos esos articulos
     if (carritoEnLocal != null) {
         mostrarCarrito()
     }
