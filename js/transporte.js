@@ -13,9 +13,11 @@ $.get(url,(respuesta,estado)=>{
                     <article class="card">
                        
                         <img class="card__imagen" src=${auto.imagen} alt="imagenCamioneta">
-                        <p class="card__carga">${auto.carga}</p>
-                        <p class="card__velocidad">${auto.velocidad}</p>
-                        
+                        <div class="contenedorInfo">
+                            <p class="card__carga"> Carga: ${auto.carga}</p>
+                            <p class="card__velocidad"> Velocidad: ${auto.velocidad}</p>
+                        </div>
+
                     </article>
                 `
             )

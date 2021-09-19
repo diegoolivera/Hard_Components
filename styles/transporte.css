@@ -1,31 +1,105 @@
 
 body{
-    background-color: rgb(0, 5, 7);
+    background-color: #f3f3f3;
 }
 
-/*header*/
+/*main*/
 
-header a{
+.contenedorPrincipal{
+    margin-top: 30px;
+}
+
+.botonVerProductos{
     text-decoration: none;
-    color: rgb(219, 230, 246);
+    background-color: #8bace9;
+    color: aliceblue;
+    padding: 10px 30px;
+    border-radius: 8px;
     font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
+.titulo{
+    color:#6495ed;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 
 /*seccion*/
-
-.titulo{
-    color: #5f9ea0;
-    text-align: center;
-    font-size: 30px;
-}
-
 /*card*/
 
-.card__nombre{
-    color: rgb(201, 227, 245);
+.card{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+   
+}
+
+.contenedorInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+
+.card__imagen{
+    width: 200px;
+}
+
+.card__carga , .card__velocidad{
+
+    color: rgb(0, 0, 0);
     font-size: 20px;
-    text-align: center;
+}
+
+
+
+
+/*responsive*/
+
+
+@media only screen and (max-width:450px){
+
+    .botonVerProductos{
+        margin-left: 60px;
+    }
+
+    .card__carga , .card__velocidad{
+        font-size: 14px;
+    }
+
+}
+
+
+
+
+
+@media only screen and (max-width:280px){
+
+
+    .botonVerProductos{
+        font-size: 15px;
+        margin-left: 50px;
+        
+    }
+
+    .titulo{
+        font-size: 15px;
+        margin-top: 50px;
+    }
+
+
+    .card__imagen{
+        width: 120px;
+    }
     
+    .card__carga , .card__velocidad{
+    
+        color: rgb(0, 0, 0);
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 }
