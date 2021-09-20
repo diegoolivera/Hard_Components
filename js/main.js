@@ -68,7 +68,9 @@ const generarCategorias = ()=>{
     for (let i= 0; i < categorias.length; i++) {
         $(".listaProductos").append(`<li><a href="#" id="item${i}">${categorias[i]}</a></li>`);
         $(`#item${i}`).on("click",()=>{
-            
+            //llama ala funcion para cerrar el menu mobile
+            cerrar()
+            //le pasa la categoria seleccionada a filtrado
             filtrado(categorias[i])
         })
 
