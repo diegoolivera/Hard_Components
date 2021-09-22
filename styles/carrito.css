@@ -166,6 +166,17 @@ header{
     border-radius: 3px;
 }
 
+.borrar{
+
+    text-decoration: none;
+    padding: 9px 10px;
+    background-color: #d12525;
+    color: #ffffff;
+    margin: 20px;
+    border-radius: 3px;
+
+}
+
 
 
 /*responsive*/
