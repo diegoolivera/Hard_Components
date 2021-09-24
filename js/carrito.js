@@ -9,6 +9,21 @@ const borrador=()=>{
 }
 
 
+//boton borrar todo
+
+const borrarTodo = ()=>{
+
+    $(".borrar").on("click",()=>{
+
+        //borra el local storage de "carrito"
+        localStorage.removeItem("seleccionados");
+        borrador()
+    })
+
+}
+
+
+
 //borra articulos del carrito
 const borrarItem = (botonEliminar,i)=>{
 
@@ -115,10 +130,11 @@ const mostrarCarrito = ()=>{
 
 
 $( document ).ready(function() {
-    
+    borrarTodo()
     //si el carrito no esta vacio mostramos esos articulos
     if (carritoEnLocal != null) {
         mostrarCarrito()
+        
     }
     else{
 

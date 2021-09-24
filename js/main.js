@@ -39,8 +39,7 @@ let productos = [
 
 ];
 
-//borra el local storage de "carrito"
-localStorage.removeItem("seleccionados");
+
 
 
 

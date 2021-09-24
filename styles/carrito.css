@@ -194,6 +194,13 @@ header{
     .contenedorLogoAux h1{
         font-size: 25px;
     }
+
+    .detalleCompra{
+        flex-direction: column;
+    }
+    .contenedorBotones{
+        margin-top: 30px;
+    }
 }
 
 @media only screen and (max-width:280px){
