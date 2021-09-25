@@ -18,6 +18,8 @@ const borrarTodo = ()=>{
         //borra el local storage de "carrito"
         localStorage.removeItem("seleccionados");
         borrador()
+        //le agregamos una clase al boton para desabilitarlo
+        $("#botonDetalle").addClass('desabilitar')
     })
 
 }
