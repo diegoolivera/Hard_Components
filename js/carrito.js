@@ -123,7 +123,7 @@ const mostrarCarrito = ()=>{
     $(".totalPagar").text(`$${total}`)
     // "" al detalle de compra
     $(".total").text(`Total:$${total}`)
-    s
+    
     
     
 }
