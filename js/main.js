@@ -123,8 +123,12 @@ const agregarProducto = (i)=>{
     
    
 }
-//acumulador para contar productos de carrito
-let cantidad = 0;
+
+  
+
+
+
+// localStorage.setItem('cantCarrito', JSON.stringify(0))
 //muestra los productos
 const mostrarProductos = (productos)=>{
 
@@ -162,10 +166,14 @@ const mostrarProductos = (productos)=>{
        
         $(`#btn${i.id}`).on("click",function(){
             //suma 1 cada vez que agrega al carrito
-            cantidad ++;
+            
+           
             let seleccion = i;
-            //agrega la cantidad de articulos seleccionados al html
-            $(".cantProducto").text(`${cantidad}`)
+            let cantCarrito=localStorage.getItem('cantCarrito');
+            cantCarrito++;
+            $(".cantProducto").text(`${cantCarrito}`)
+            localStorage.setItem('cantCarrito', JSON.stringify(cantCarrito))
+           
             //llama a agregar prodcuto y le pasa el articulo
             agregarProducto(seleccion)
   
@@ -175,6 +183,11 @@ const mostrarProductos = (productos)=>{
     
 }
 
+
+const setCarrito = ()=>{
+    let cantCarrito=localStorage.getItem('cantCarrito');
+    $(".cantProducto").text(`${cantCarrito}`)
+}
 
 //borra un articulo
 const borrarProducto = ()=>{
@@ -269,8 +282,8 @@ $( document ).ready(function() {
     buscarProducto(productos)
     //evento para ordenar
     $("#comboSeleccion").on("change",ordenar);  
-    
-
+    setCarrito();
+   
 
 
   });

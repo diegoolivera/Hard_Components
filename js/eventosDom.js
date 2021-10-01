@@ -21,20 +21,3 @@ $("#cerrarMenu").on("click",cerrar)
 
 
 
-//menu deplegable 
-//tiene un error
-//(cuando hace el slideUp esconde toda la barra de filtros 
-//para desktop)
-
-// $("#botonAbrirMenu").on("click",()=>{
-
-//     $("#listaProductos").slideDown("slow")
-// })
-
-// $("#cerrarMenu").on("click",()=>{
-//     $("#listaProductos").slideUp("slow")
-    
-    
-
-// })
-

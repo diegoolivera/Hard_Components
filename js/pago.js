@@ -196,6 +196,9 @@ const registrarVenta = ()=>{
 
     
     localStorage.removeItem("seleccionados");
+    let cantCarrito=localStorage.getItem('cantCarrito');
+        cantCarrito = 0;
+        localStorage.setItem("cantCarrito",JSON.stringify(cantCarrito))
 }
 
 

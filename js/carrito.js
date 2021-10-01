@@ -17,9 +17,14 @@ const borrarTodo = ()=>{
 
         //borra el local storage de "carrito"
         localStorage.removeItem("seleccionados");
-        borrador()
+        borrador();
+        
+        let cantCarrito=localStorage.getItem('cantCarrito');
+        cantCarrito = 0;
+        localStorage.setItem("cantCarrito",JSON.stringify(cantCarrito))
+
         //le agregamos una clase al boton para desabilitarlo
-        $("#botonDetalle").addClass('desabilitar')
+        $("#botonDetalle").addClass('desabilitar');
     })
 
 }
@@ -43,17 +48,27 @@ const borrarItem = (botonEliminar,i)=>{
           }).then((result) => {
             if (result.isConfirmed) {
                 //cuando confirma se ejecuta el borrado
-                if (carritoEnLocal=== null) {
+                if (carritoEnLocal.length == 0) {
                     return;
                 }
         
                 if (carritoEnLocal.length === 1) {
-        
+                    
+                    
                     borrador()
                     localStorage.clear();
+                    let cantCarrito=localStorage.getItem('cantCarrito');
+                    cantCarrito = 0;
+                    localStorage.setItem("cantCarrito",JSON.stringify(cantCarrito))
+                    
                     $("#total").text("Total:0")
                     return;
                 }
+
+                let cantCarrito=localStorage.getItem('cantCarrito');
+                cantCarrito -= carritoEnLocal[i][1];
+                localStorage.setItem("cantCarrito",JSON.stringify(cantCarrito))
+
                 borrador()
         
                 carritoEnLocal.splice(i, 1);
