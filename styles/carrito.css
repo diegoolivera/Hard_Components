@@ -177,6 +177,25 @@ header{
 
 }
 
+.banner{
+    display: none;
+    background-color: #303030;
+    padding: 10px;
+    border-radius:  0 0 20% 20%;
+    position: relative;
+    left: 420px;
+    top: 80px;
+    
+   
+}
+
+.banner a{
+    text-decoration: none;
+    color: #b6cedd;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 
 
 /*responsive*/
@@ -201,6 +220,13 @@ header{
     .contenedorBotones{
         margin-top: 30px;
     }
+
+    .banner{
+       
+        left: 90px;
+        top: 30px;
+        
+    }
 }
 
 @media only screen and (max-width:280px){
@@ -217,7 +243,14 @@ header{
         font-size: 15px;
     }
 
-    cant{
+    .cant{
         font-size: 15px;
+    }
+
+    .banner{
+       
+        left: 50px;
+        top: 30px;
+        
     }
 }
