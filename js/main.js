@@ -169,11 +169,21 @@ const mostrarProductos = (productos)=>{
             
            
             let seleccion = i;
-            let cantCarrito=localStorage.getItem('cantCarrito');
-            cantCarrito=0;
-            cantCarrito++;
-            $(".cantProducto").text(`${cantCarrito}`)
-            localStorage.setItem('cantCarrito', JSON.stringify(cantCarrito))
+            if (localStorage.getItem('cantCarrito') == null) {
+                let cantCarrito= 0;
+                cantCarrito++;
+                $(".cantProducto").text(`${cantCarrito}`)
+                localStorage.setItem('cantCarrito', JSON.stringify(cantCarrito))
+            }
+            else{
+                let cantCarrito =localStorage.getItem('cantCarrito');
+                cantCarrito++;
+                $(".cantProducto").text(`${cantCarrito}`)
+                localStorage.setItem('cantCarrito', JSON.stringify(cantCarrito))
+            }
+            
+            
+            
            
             //llama a agregar prodcuto y le pasa el articulo
             agregarProducto(seleccion)
