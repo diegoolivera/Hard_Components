@@ -66,6 +66,7 @@ const borrarItem = (botonEliminar,i)=>{
             if (result.isConfirmed) {
                 //cuando confirma se ejecuta el borrado
                 if (carritoEnLocal.length == 0) {
+                    $("#botonDetalle").addClass('desabilitar');
                     return;
                 }
         
@@ -96,7 +97,7 @@ const borrarItem = (botonEliminar,i)=>{
           })
         
         
-
+   
         
 
     })
@@ -163,6 +164,9 @@ const mostrarCarrito = ()=>{
 
 
 
+
+
+
 $( document ).ready(function() {
     borrarTodo()
     //si el carrito no esta vacio mostramos esos articulos
@@ -181,6 +185,7 @@ $( document ).ready(function() {
         
         //le agregamos una clase al boton para desabilitarlo
         $("#botonDetalle").addClass('desabilitar')
+
     }
     
 
