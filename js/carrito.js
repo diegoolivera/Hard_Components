@@ -14,31 +14,35 @@ const borrador=()=>{
 const borrarTodo = ()=>{
 
     $(".borrar").on("click",()=>{
+       
+        if (carritoEnLocal.length != 0) {
+
+            Swal.fire({
+                title: 'Estas Seguro de Borrar Todo?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'si,Borrar Todo'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  //borra el local storage de "carrito"
+                    localStorage.removeItem("seleccionados");
+                    borrador();
+            
+                    let cantCarrito=localStorage.getItem('cantCarrito');
+                    cantCarrito = 0;
+                    localStorage.setItem("cantCarrito",JSON.stringify(cantCarrito))
+                    $("#total").text("Total:0")
+                    //le agregamos una clase al boton para desabilitarlo
+                    $("#botonDetalle").addClass('desabilitar');
+                    $(".borrar").addClass('desabilitar');
+                }
+              })
+        }
+        
 
         
-        
-
-        Swal.fire({
-            title: 'Estas Seguro de Borrar Todo?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'si,Borrar Todo'
-          }).then((result) => {
-            if (result.isConfirmed) {
-              //borra el local storage de "carrito"
-                localStorage.removeItem("seleccionados");
-                borrador();
-        
-                let cantCarrito=localStorage.getItem('cantCarrito');
-                cantCarrito = 0;
-                localStorage.setItem("cantCarrito",JSON.stringify(cantCarrito))
-                $("#total").text("Total:0")
-                //le agregamos una clase al boton para desabilitarlo
-                $("#botonDetalle").addClass('desabilitar');
-            }
-          })
         
 
 
@@ -50,7 +54,7 @@ const borrarTodo = ()=>{
 
 //borra articulos del carrito
 const borrarItem = (botonEliminar,i)=>{
-
+    
     //al boton recibido le agregamos un evento
     botonEliminar.click(()=>{
 
@@ -64,9 +68,9 @@ const borrarItem = (botonEliminar,i)=>{
             confirmButtonText: 'Borrar'
           }).then((result) => {
             if (result.isConfirmed) {
+
                 //cuando confirma se ejecuta el borrado
                 if (carritoEnLocal.length == 0) {
-                    $("#botonDetalle").addClass('desabilitar');
                     return;
                 }
         
@@ -78,7 +82,8 @@ const borrarItem = (botonEliminar,i)=>{
                     let cantCarrito=localStorage.getItem('cantCarrito');
                     cantCarrito = 0;
                     localStorage.setItem("cantCarrito",JSON.stringify(cantCarrito))
-                    
+                    $("#botonDetalle").addClass('desabilitar');
+                    $(".borrar").addClass('desabilitar');
                     $("#total").text("Total:0")
                     return;
                 }
@@ -97,10 +102,12 @@ const borrarItem = (botonEliminar,i)=>{
           })
         
         
-   
+          
         
 
     })
+
+   
 
 }
 
@@ -185,6 +192,10 @@ $( document ).ready(function() {
         
         //le agregamos una clase al boton para desabilitarlo
         $("#botonDetalle").addClass('desabilitar')
+        $(".borrar").addClass('desabilitar');
+        
+
+
 
     }
     
