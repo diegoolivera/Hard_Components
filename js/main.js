@@ -128,7 +128,7 @@ const agregarProducto = (i)=>{
 
 
 
-let cantCarrito = 0;
+
 //muestra los productos
 const mostrarProductos = (productos)=>{
 
@@ -157,7 +157,7 @@ const mostrarProductos = (productos)=>{
 
         //animaciones
         $(".card").hide();
-        $(".card").fadeIn(100);
+        $(".card").fadeIn(200);
         
         
 
@@ -170,6 +170,7 @@ const mostrarProductos = (productos)=>{
            
             let seleccion = i;
             let cantCarrito=localStorage.getItem('cantCarrito');
+            cantCarrito=0;
             cantCarrito++;
             $(".cantProducto").text(`${cantCarrito}`)
             localStorage.setItem('cantCarrito', JSON.stringify(cantCarrito))
