@@ -128,7 +128,7 @@ const agregarProducto = (i)=>{
 
 
 
-// localStorage.setItem('cantCarrito', JSON.stringify(0))
+let cantCarrito = 0;
 //muestra los productos
 const mostrarProductos = (productos)=>{
 

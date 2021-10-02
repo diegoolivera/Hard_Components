@@ -37,7 +37,7 @@ const borrarTodo = ()=>{
                     //le agregamos una clase al boton para desabilitarlo
                     $("#botonDetalle").addClass('desabilitar');
                     $(".borrar").addClass('desabilitar');
-                    $(".banner").css("display","inline-block")
+                    $(".banner").css("display","grid")
                 }
               })
         }
@@ -86,7 +86,7 @@ const borrarItem = (botonEliminar,i)=>{
                     $("#botonDetalle").addClass('desabilitar');
                     $(".borrar").addClass('desabilitar');
                     $("#total").text("Total:0")
-                    $(".banner").css("display","inline-block")
+                    $(".banner").css("display","grid")
                     return;
                 }
 
@@ -195,7 +195,7 @@ $( document ).ready(function() {
         //le agregamos una clase al boton para desabilitarlo
         $("#botonDetalle").addClass('desabilitar')
         $(".borrar").addClass('desabilitar');
-        $(".banner").css("display","inline-block")
+        $(".banner").css("display","grid")
         
 
 

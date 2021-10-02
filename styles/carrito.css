@@ -178,22 +178,22 @@ header{
 }
 
 .banner{
+
     display: none;
-    background-color: #303030;
-    padding: 10px;
-    border-radius:  0 0 20% 20%;
-    position: relative;
-    left: 420px;
-    top: 80px;
-    
+    place-content: center;
+    margin-top: 20px;
    
 }
 
 .banner a{
+    display: inline;
     text-decoration: none;
     color: #b6cedd;
     font-size: 25px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #303030;
+    border-radius:  0 0 20% 20%;
+    padding: 10px;
 }
 
 
