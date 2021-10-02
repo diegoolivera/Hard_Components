@@ -15,16 +15,33 @@ const borrarTodo = ()=>{
 
     $(".borrar").on("click",()=>{
 
-        //borra el local storage de "carrito"
-        localStorage.removeItem("seleccionados");
-        borrador();
         
-        let cantCarrito=localStorage.getItem('cantCarrito');
-        cantCarrito = 0;
-        localStorage.setItem("cantCarrito",JSON.stringify(cantCarrito))
+        
 
-        //le agregamos una clase al boton para desabilitarlo
-        $("#botonDetalle").addClass('desabilitar');
+        Swal.fire({
+            title: 'Estas Seguro de Borrar Todo?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'si,Borrar Todo'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              //borra el local storage de "carrito"
+                localStorage.removeItem("seleccionados");
+                borrador();
+        
+                let cantCarrito=localStorage.getItem('cantCarrito');
+                cantCarrito = 0;
+                localStorage.setItem("cantCarrito",JSON.stringify(cantCarrito))
+                $("#total").text("Total:0")
+                //le agregamos una clase al boton para desabilitarlo
+                $("#botonDetalle").addClass('desabilitar');
+            }
+          })
+        
+
+
     })
 
 }
